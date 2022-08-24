@@ -1,0 +1,65 @@
+@font-face {
+	font-family: 'Inter';
+	src:
+		local('fonts/inter'), url('/assets/fonts/inter/inter-thin.ttf') format('ttf'),
+		local('fonts/inter'), url('/assets/fonts/inter/inter-thin.woff2') format('woff2'),
+		local('fonts/inter'), url('/assets/fonts/inter/inter-thin.woff') format('woff');
+	font-weight: 100;
+	font-style: normal;
+	font-display: block;
+}
+
+@font-face {
+	font-family: 'Inter';
+	src:
+		local('fonts/inter'), url('/assets/fonts/inter/inter-light.ttf') format('ttf'),
+		local('fonts/inter'), url('/assets/fonts/inter/inter-light.woff2') format('woff2'),
+		local('fonts/inter'), url('/assets/fonts/inter/inter-light.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+	font-display: block;
+}
+
+@font-face {
+	font-family: 'Inter';
+	src:
+		local('fonts/inter'), url('/assets/fonts/inter/inter-medium.ttf') format('ttf'),
+		local('fonts/inter'), url('/assets/fonts/inter/inter-medium.woff2') format('woff2'),
+		local('fonts/inter'), url('/assets/fonts/inter/inter-medium.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	font-display: block;
+}
+
+@font-face {
+	font-family: 'Inter';
+	src:
+		local('fonts/inter'), url('/assets/fonts/inter/inter-regular.ttf') format('ttf'),
+		local('fonts/inter'), url('/assets/fonts/inter/inter-regular.woff2') format('woff2'),
+		local('fonts/inter'), url('/assets/fonts/inter/inter-regular.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+	font-display: block;
+}
+
+@font-face {
+	font-family: 'Inter';
+	src:
+		local('fonts/inter'), url('/assets/fonts/inter/inter-bold.ttf') format('ttf'),
+		local('fonts/inter'), url('/assets/fonts/inter/inter-bold.woff2') format('woff2'),
+		local('fonts/inter'), url('/assets/fonts/inter/inter-bold.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+	font-splay: block;
+}
+
+@font-face {
+	font-family: 'Inter';
+	src:
+		local('fonts/inter'), url('/assets/fonts/inter/inter-black.ttf') format('ttf'),
+		local('fonts/inter'), url('/assets/fonts/inter/inter-black.woff2') format('woff2'),
+		local('fonts/inter'), url('/assets/fonts/inter/inter-black.woff') format('woff');
+	font-weight: 900;
+	font-style: normal;
+	font-display: block;
+}
