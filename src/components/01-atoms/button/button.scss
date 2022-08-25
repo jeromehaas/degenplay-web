@@ -1,22 +1,24 @@
 @import 'styles/variables.scss';
 
 .button {
-	padding: 8px 32px;
-	border-radius: 32px;
-	display: inline-flex;
-	justify-content: flex-start;
-	width: auto;
-	align-items: center;
 	cursor: pointer;
-	border: 10px solid;
 	position: relative;
-	background: #FFFFFF;
-	background-clip: padding-box;
-	position: relative;
-  color: $black;
-  background: #FFFFFF;
-  background-clip: padding-box;
-  border: solid 4px transparent;
+	margin: 10px;
+	padding: 32px;
+	display: inline-flex;
+	flex-direction: row;
+	align-items: center;
+	overflow: hidden;
+	border-radius: 32px;
+	padding: 8px 32px;
+	background-color: transparent;
+
+	&__icon {
+		padding-left: 16px;
+		padding-right: 8px;
+		transition: all 0.3s ease;
+	}
+
 
 	&::before {
 		content: "";
@@ -24,18 +26,34 @@
 		top: 0;
 		right: 0;
 		bottom: 0;
-		left: 0;
+		left: 0;	
 		z-index: -1;
-		margin: -4px;
-		border-radius: inherit;
-		background: linear-gradient(45deg, $rainbow-color-1, $rainbow-color-2, $rainbow-color-3, $rainbow-color-4);
+		border-radius: 32px;
+		background-color: $white;
+		margin: 2px;
+		display: inline-block;
+	}
+	
+	&::after {
+		content: "";
+		position: absolute;
+		top: -5px;
+		width: 200%;
+		bottom: -5px;
+		left: -5px;	
+		z-index: -2;
+		border-radius: 64px;
+		background: linear-gradient(45deg, $rainbow-color-1, $rainbow-color-2, $rainbow-color-3, $rainbow-color-4,  $rainbow-color-1, $rainbow-color-2, $rainbow-color-3, $rainbow-color-4);
+		display: inline-block;
+		transition: all 0.3s ease;
 	}
 
-	&::after {
-		content: "\ea01";
-		font: normal normal normal 16px 'Icon';
-		color: $black;
-		padding-left: 16px;
+	&:hover::after {
+		left: -100%;
+	}
+
+	&:hover .button__icon {
+		transform: translateX(8px);
 	}
 
 }

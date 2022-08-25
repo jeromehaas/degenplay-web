@@ -22,9 +22,9 @@
   font-size: 32px;
 }
 
-.icon-circle::before { content: "\ea04"; }
-.icon-checkmark::before { content: "\ea06"; }
-.icon-warning::before { content: "\ea07"; }
-.icon-arrow::before { content: "\ea01"; }
-.icon-close::before { content: "\ea02"; }
-.icon-caret::before { content: "\ea03"; }
+.icon--circle::before { content: "\ea04"; }
+.icon--checkmark::before { content: "\ea06"; }
+.icon--warning::before { content: "\ea07"; }
+.icon--arrow::before { content: "\ea01"; }
+.icon--close::before { content: "\ea02"; }
+.icon--caret::before { content: "\ea03"; }
