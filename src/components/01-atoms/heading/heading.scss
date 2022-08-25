@@ -1,0 +1,14 @@
+@import 'styles/variables';
+
+.heading {
+	color: $black;
+
+	&--white {
+		color: $white;
+	}
+
+	&--black {
+		color: $black;
+	}
+
+}
