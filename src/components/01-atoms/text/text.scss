@@ -1,0 +1,14 @@
+@import 'styles/variables';
+
+.text {
+	color: $black;
+
+	&--white {
+		color: $white;
+	}
+
+	&--black {
+		color: $black;
+	}
+
+}

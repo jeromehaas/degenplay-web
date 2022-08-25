@@ -14,6 +14,7 @@ const Rainbow = ({ children }) => {
 		letters.forEach((letter) => {
 			let span;
 			span = document.createElement('span');
+			span.classList.add('rainbow__letter');
 			span.innerText = letter;
 			element.append(span);
 		});
