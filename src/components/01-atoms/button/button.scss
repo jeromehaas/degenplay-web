@@ -1,0 +1,41 @@
+@import 'styles/variables.scss';
+
+.button {
+	padding: 8px 32px;
+	border-radius: 32px;
+	display: inline-flex;
+	justify-content: flex-start;
+	width: auto;
+	align-items: center;
+	cursor: pointer;
+	border: 10px solid;
+	position: relative;
+	background: #FFFFFF;
+	background-clip: padding-box;
+	position: relative;
+  color: $black;
+  background: #FFFFFF;
+  background-clip: padding-box;
+  border: solid 4px transparent;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+		margin: -4px;
+		border-radius: inherit;
+		background: linear-gradient(45deg, $rainbow-color-1, $rainbow-color-2, $rainbow-color-3, $rainbow-color-4);
+	}
+
+	&::after {
+		content: "\ea01";
+		font: normal normal normal 16px 'Icon';
+		color: $black;
+		padding-left: 16px;
+	}
+
+}

@@ -4,7 +4,9 @@
 @import url('styles/variables.scss');
 @import url('styles/global.scss');
 @import url('styles/typography.scss');
+@import url('styles/icon.scss');
 
 /* ATOMS */
 @import url('components/01-atoms/rainbow/rainbow.scss');
-@import url('components/01-atoms/logo/logo.scss')
+@import url('components/01-atoms/logo/logo.scss');
+@import url('components/01-atoms/button/button.scss');

@@ -1,11 +1,7 @@
 import { useRef, useEffect } from "react";
 
 const Rainbow = ({ children }) => {
-
-	useEffect(() => {
-		colorize(children);
-	}, [children]);
-
+	
 	const reference = useRef(null);
 
 	const colorize = (value) => {
@@ -19,6 +15,10 @@ const Rainbow = ({ children }) => {
 			element.append(span);
 		});
 	};
+	
+	useEffect(() => {
+		colorize(children);
+	}, [children]);
 
 	return (
 		<span className="rainbow" ref={ reference }></span>

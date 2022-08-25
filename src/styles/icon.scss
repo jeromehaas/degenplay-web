@@ -1,0 +1,30 @@
+.icon {
+  display: inline-block;
+  font: normal normal normal 16px 'Icon';
+  color: inherit;
+  flex-shrink: 0;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-sm {
+  font-size: 12px;
+}
+.icon-md {
+  font-size: 16px;
+}
+
+.icon-lg {
+  font-size: 24px;
+}
+.icon-bg {
+  font-size: 32px;
+}
+
+.icon-circle::before { content: "\ea04"; }
+.icon-checkmark::before { content: "\ea06"; }
+.icon-warning::before { content: "\ea07"; }
+.icon-arrow::before { content: "\ea01"; }
+.icon-close::before { content: "\ea02"; }
+.icon-caret::before { content: "\ea03"; }
