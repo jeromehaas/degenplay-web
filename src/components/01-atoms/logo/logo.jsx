@@ -1,8 +1,11 @@
+import Rainbow from "components/01-atoms/rainbow/rainbow";
+
 const Logo = () => {
 
 	return (
-		<p class="logo">Degen<span class="rainbow">play</span></p>
-	)
+		<p className="logo">Degen<Rainbow>play</Rainbow></p>
+	);
+
 };
 
 export default Logo;
