@@ -6,11 +6,13 @@ import InputText from "components/07-form-elements/input-text/input-text";
 import InputImage from "components/07-form-elements/input-image/input-image";
 import Accordion from "components/02-molecules/accordion/accordion";
 import CoinCard from "components/02-molecules/coin-card/coin-card";
+import TeaserBanner from "components/03-molecules/teaser-banner/teaser-banner";
 
 const Start = () => {
 
 	return (
 		<div className="start">
+			<TeaserBanner/>
 			<Button>Start Now</Button>
 			<CoinCard />
 			{/* <Logo />

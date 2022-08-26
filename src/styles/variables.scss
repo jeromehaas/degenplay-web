@@ -13,3 +13,8 @@ $rainbow-color-1: $red-50;
 $rainbow-color-2: $orange-50;
 $rainbow-color-3: $blue-50;
 $rainbow-color-4: $green-50;
+
+$sunrise-color-1: transparentize($red-50, 0.5);
+$sunrise-color-2: transparentize($orange-50, 0.5);
+$sunrise-color-3: transparentize($blue-50, 0.5);
+$sunrise-color-4: transparentize($green-50, 0.5);

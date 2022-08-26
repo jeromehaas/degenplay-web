@@ -11,10 +11,14 @@
 @import url('components/01-atoms/logo/logo.scss');
 @import url('components/01-atoms/button/button.scss');
 @import url('components/01-atoms/link/link.scss');
+@import url('components/01-atoms/text/text.scss');
 
 /* MOLECULES */
 @import url('components/02-molecules/accordion/accordion.scss');
 @import url('components/02-molecules/coin-card/coin-card.scss');
+
+/* ORGANISMS */
+@import url('components/03-molecules/teaser-banner/teaser-banner.scss');
 
 /* FORM ELEMENTS */
 @import url('components/07-form-elements/input-text/input-text.scss');

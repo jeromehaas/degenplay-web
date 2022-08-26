@@ -1,7 +1,7 @@
-const Text = ({ children }) => {
+const Text = ({ children, className }) => {
 
 	return (
-		<p className="text">{ children }</p>
+		<p className={ `${className ? className : ''} text`}>{ children }</p>
 	);
 
 };

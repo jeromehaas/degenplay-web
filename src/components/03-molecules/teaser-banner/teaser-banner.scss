@@ -1,0 +1,51 @@
+@import 'styles/variables.scss';
+
+.teaser-banner {
+    z-index: 10;
+    position: relative;
+    
+    &__banner, .banner {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 80px;
+        background: linear-gradient(90deg, $sunrise-color-1, $sunrise-color-2, $sunrise-color-3, $sunrise-color-4);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        
+        &__icon {
+            font-size: 16px;
+            margin-right: 16px;
+        }
+        
+        &__text, .text {
+            display: inline-block;
+            margin-right: 16px;
+            
+            &:not(:last-child) {
+                margin-right: 8px;
+            }
+
+        }
+
+        &__button {}
+
+    }
+
+    &__placeholder {
+        height: 80px;
+    }
+
+    &__cover {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 80px;
+        background-color: $white;
+    }
+
+}

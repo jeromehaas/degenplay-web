@@ -3,10 +3,10 @@
 
 .coin-card {
 	@include rainbow-border;
-    padding: 16px;
+    padding: 16px 32px 16px 16px;
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: 90px auto 40px;
+    grid-template-columns: 90px auto 24px;
     grid-gap: 16px;
     align-items: center;
 
@@ -35,6 +35,7 @@
 
             &__icon { 
                 color: $green-50;
+                font-size: 16px;
             }
 
         }
@@ -45,10 +46,22 @@
         }
 
         &__price {
-
+            color: $black;
         }
-
+        
     }
 
 
+    &__icon {
+        font-size: 24px;
+        transition: all 0.3s ease;
+    }
+
+    &:hover .coin-card__icon {
+        transform: translateX(8px);
+    }
 }
+
+	// &__icon {
+	// 	font-size: 16px;
+	// }
