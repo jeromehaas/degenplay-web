@@ -7,12 +7,9 @@
         display: grid;
         grid-template-rows: auto auto;
         grid-template-columns: auto 32px;
-        border-radius: 32px;
-        overflow: hidden;
         padding: 16px 32px;
         margin-bottom: 16px;
-        position: relative;
-        @include rainbox-border;
+        @include rainbow-border;
 
         &__heading { }
         

@@ -1,0 +1,54 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.coin-card {
+	@include rainbow-border;
+    padding: 16px;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 90px auto 40px;
+    grid-gap: 16px;
+    align-items: center;
+
+    &__thumbnail {
+        width: 90px;
+        height: 90px;
+        object-fit: cover; 
+    }
+
+    &__infos, .infos {
+
+        &__labels, .labels {
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+            align-items: center;
+            margin-bottom: 8px;
+
+            &__item {
+                display: inline-block;
+                background-color: $grey-40;
+                color: $grey-60;
+                padding: 8px;
+                border-radius: 4px;
+            }
+
+            &__icon { 
+                color: $green-50;
+            }
+
+        }
+
+        &__name {
+            color: $grey-60;
+            margin-bottom: 8px;
+        }
+
+        &__price {
+
+        }
+
+    }
+
+
+}

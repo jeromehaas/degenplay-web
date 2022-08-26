@@ -4,8 +4,12 @@ $white: #FFFFFF;
 $grey-40: #E9E9E9;
 $grey-60: #A6A6A6;
 
+$red-50: #FF4141;
+$orange-50: #FFC700;
+$blue-50: #22AFFF;
+$green-50: #34E89E;
 
-$rainbow-color-1: #FF4141;
-$rainbow-color-2: #FFC700;
-$rainbow-color-3: #22AFFF;
-$rainbow-color-4: #34E89E;
+$rainbow-color-1: $red-50;
+$rainbow-color-2: $orange-50;
+$rainbow-color-3: $blue-50;
+$rainbow-color-4: $green-50;

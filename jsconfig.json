@@ -12,8 +12,8 @@
       "functions/*": [
         "src/functions/*"
       ],
-      "public/*": [
-        "src/public/*"
+      "assets/*": [
+        "src/assets/*"
       ],
 			"context/*": [
         "src/context/*"

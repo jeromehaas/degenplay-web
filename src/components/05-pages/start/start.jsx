@@ -5,12 +5,14 @@ import Link from "components/01-atoms/link/link";
 import InputText from "components/07-form-elements/input-text/input-text";
 import InputImage from "components/07-form-elements/input-image/input-image";
 import Accordion from "components/02-molecules/accordion/accordion";
+import CoinCard from "components/02-molecules/coin-card/coin-card";
 
 const Start = () => {
 
 	return (
 		<div className="start">
 			<Button>Start Now</Button>
+			<CoinCard />
 			{/* <Logo />
 			<Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a diam ultrices, ullamcorper purus non, tristique mi. Donec at mi scelerisque, imperdiet est eget, porttitor libero. Pellentesque imperdiet euismod ex.</Text>
 			<Link>Explore</Link>

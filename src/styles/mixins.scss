@@ -1,6 +1,9 @@
-@mixin rainbox-border {
+@mixin rainbow-border {
 
-    // background-color: red;
+	position: relative;
+	border-radius: 32px;
+	overflow: hidden;
+
 
 	&::before {
 		content: "";
@@ -32,7 +35,7 @@
 
 }
 
-@mixin rainbox-border--animated {
+@mixin rainbow-border--animated {
 
 
 	&::before {
@@ -67,8 +70,6 @@
 		left: -100%;
 	}
 
-	&:hover .button__icon {
-		transform: translateX(8px);
-	}
+
 
 }
