@@ -3,6 +3,7 @@ import Text from "components/01-atoms/text/text";
 import Button from "components/01-atoms/button/button";
 import Link from "components/01-atoms/link/link";
 import InputText from "components/07-form-elements/input-text/input-text";
+import InputImage from "components/07-form-elements/input-image/input-image";
 
 const Start = () => {
 
@@ -13,11 +14,16 @@ const Start = () => {
 			<Button>Start Now</Button>
 			<Link>Explore</Link>
 			<InputText
-				className="input"
+				className=""
 				label="label"
 				id="input"
 				placeholder="placeholder"
 				isRequired={ false }
+			/>
+			<InputImage
+				className=""
+				id="image"
+				placeholder="upload image"
 			/>
 		</div>
 	);

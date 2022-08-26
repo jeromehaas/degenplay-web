@@ -42,10 +42,19 @@
 	justify-content: space-between;
 }
 
-.input__label {
+.input-text__label {
 	font-size: 14px;
 }
 
-.input__field {
+.input-image__label {
 	font-size: 14px;
+}
+
+.input-text__field {
+	font-size: 14px;
+}
+
+.button {
+	font-size: 14px;
+	font-weight: 800;
 }
