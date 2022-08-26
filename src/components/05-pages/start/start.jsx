@@ -4,14 +4,15 @@ import Button from "components/01-atoms/button/button";
 import Link from "components/01-atoms/link/link";
 import InputText from "components/07-form-elements/input-text/input-text";
 import InputImage from "components/07-form-elements/input-image/input-image";
+import Accordion from "components/02-molecules/accordion/accordion";
 
 const Start = () => {
 
 	return (
 		<div className="start">
-			<Logo />
-			<Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a diam ultrices, ullamcorper purus non, tristique mi. Donec at mi scelerisque, imperdiet est eget, porttitor libero. Pellentesque imperdiet euismod ex.</Text>
 			<Button>Start Now</Button>
+			{/* <Logo />
+			<Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a diam ultrices, ullamcorper purus non, tristique mi. Donec at mi scelerisque, imperdiet est eget, porttitor libero. Pellentesque imperdiet euismod ex.</Text>
 			<Link>Explore</Link>
 			<InputText
 				className=""
@@ -24,7 +25,8 @@ const Start = () => {
 				className=""
 				id="image"
 				placeholder="upload image"
-			/>
+			/> */}
+			<Accordion />
 		</div>
 	);
 

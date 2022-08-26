@@ -1,4 +1,5 @@
 @import 'styles/variables.scss';
+@import 'styles/mixins.scss';
 
 .button {
 	cursor: pointer;
@@ -14,49 +15,15 @@
 	background-color: transparent;
 	color: $black;
 	text-transform: uppercase;
-margin: 64px;
+	margin: 64px;
+	@include rainbox-border--animated;
+
 
 	&__icon {
 		padding-left: 16px;
 		padding-right: 8px;
 		transition: all 0.3s ease;
 		font-size: 24px;
-	}
-
-
-	&::before {
-		content: "";
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;	
-		z-index: -1;
-		border-radius: 32px;
-		background-color: $white;
-		margin: 2px;
-		display: inline-block;
-		border: 2px solid $white
-	}
-	
-	&::after {
-		content: "";
-		position: absolute;
-		top: -5px;
-		width: 205%;
-		bottom: -5px;
-		left: -5px;	
-		z-index: -2;
-		border-radius: 64px;
-		// background: linear-gradient(45deg, $rainbow-color-1 12.5%, $rainbow-color-2 12.5% 25%,  $rainbow-color-3 25% 37.5%, $rainbow-color-4 37.5% 50%,  $rainbow-color-1 50% 62.5%, $rainbow-color-2 62.5% 75%, $rainbow-color-3 75% 87.5%, $rainbow-color-4 87.5% 100%);
-		background: linear-gradient(45deg, $rainbow-color-1, $rainbow-color-2,  $rainbow-color-3, $rainbow-color-4,  $rainbow-color-1, $rainbow-color-2, $rainbow-color-3, $rainbow-color-4);
-		// background: linear-gradient(45deg, $rainbow-color-1 12.5%, $rainbow-color-2 12.5% 25%,  $rainbow-color-3 25% 37.5%, $rainbow-color-4 37.5% 50%,  $rainbow-color-1 50% 62.5%, $rainbow-color-2 62.5% 75%, $rainbow-color-3 75% 87.5%, $rainbow-color-4 87.5% 100%);
-		display: inline-block;
-		transition: all 0.3s ease;
-	}
-
-	&:hover::after {
-		left: -100%;
 	}
 
 	&:hover .button__icon {

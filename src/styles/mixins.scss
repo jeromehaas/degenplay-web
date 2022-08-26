@@ -1,0 +1,74 @@
+@mixin rainbox-border {
+
+    // background-color: red;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;	
+		z-index: -5;
+		border-radius: 32px;
+		background-color: $white;
+		margin: 2px;
+		display: inline-block;
+		border: 2px solid $white
+	}
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0px;
+        width: 205%;
+        bottom: 0px;
+        left: 0px;	
+        z-index: -10;
+        background: linear-gradient(45deg, $rainbow-color-1, $rainbow-color-2,  $rainbow-color-3, $rainbow-color-4,  $rainbow-color-1, $rainbow-color-2, $rainbow-color-3, $rainbow-color-4);
+        display: inline-block;
+        transition: all 0.3s ease;
+    }
+
+}
+
+@mixin rainbox-border--animated {
+
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;	
+		z-index: -5;
+		border-radius: 32px;
+		background-color: $white;
+		margin: 2px;
+		display: inline-block;
+		border: 2px solid $white
+	}
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0px;
+        width: 205%;
+        bottom: 0px;
+        left: 0px;	
+        z-index: -10;
+        background: linear-gradient(45deg, $rainbow-color-1, $rainbow-color-2,  $rainbow-color-3, $rainbow-color-4,  $rainbow-color-1, $rainbow-color-2, $rainbow-color-3, $rainbow-color-4);
+        display: inline-block;
+        transition: all 0.3s ease;
+    }
+
+    &:hover::after {
+		left: -100%;
+	}
+
+	&:hover .button__icon {
+		transform: translateX(8px);
+	}
+
+}
