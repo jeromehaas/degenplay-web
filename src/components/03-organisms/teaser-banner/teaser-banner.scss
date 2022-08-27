@@ -5,16 +5,21 @@
     position: relative;
     
     &__banner, .banner {
+        background: linear-gradient(90deg, $sunrise-color-1, $sunrise-color-2, $sunrise-color-3, $sunrise-color-4);
         position: fixed;
         top: 0;
         right: 0;
         left: 0;
         height: 80px;
-        background: linear-gradient(90deg, $sunrise-color-1, $sunrise-color-2, $sunrise-color-3, $sunrise-color-4);
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
+        
+        &__inner {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
         
         &__icon {
             font-size: 16px;

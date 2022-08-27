@@ -9,6 +9,7 @@ import CoinCard from "components/02-molecules/coin-card/coin-card";
 import TeaserBanner from "components/03-organisms/teaser-banner/teaser-banner";
 import DesktopNavigation from "components/03-organisms/desktop-navigation/desktop-navitgation";
 import Promotion from "components/03-organisms/promotion/promotion";
+import Hero from "components/03-organisms/hero/hero";
 
 const Start = () => {
 
@@ -16,6 +17,7 @@ const Start = () => {
 		<div className="start">
 			<TeaserBanner/>
 			<DesktopNavigation />
+			<Hero />
 			<Promotion />
 			{/* <Button>Start Now</Button> */}
 			{/* <CoinCard /> */}

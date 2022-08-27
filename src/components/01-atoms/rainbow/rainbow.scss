@@ -5,8 +5,8 @@
 	color: inherit;	
 	font-weight: inherit;
 
-	span:nth-child(4n + 1) { color: $rainbow-color-1 };
-	span:nth-child(4n + 2) { color: $rainbow-color-2 };
-	span:nth-child(4n + 3) { color: $rainbow-color-3 };
-	span:nth-child(4n + 4) { color: $rainbow-color-4 };
+	&__letter:nth-child(4n + 1) { color: $rainbow-color-1 };
+	&__letter:nth-child(4n + 2) { color: $rainbow-color-2 };
+	&__letter:nth-child(4n + 3) { color: $rainbow-color-3 };
+	&__letter:nth-child(4n + 4) { color: $rainbow-color-4 };
 };
