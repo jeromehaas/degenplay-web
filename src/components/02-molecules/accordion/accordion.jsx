@@ -1,7 +1,7 @@
 import { useRef } from 'react';
-import { items } from 'components/02-molecules/accordion/data.js';
 
-const Accordion = () => {
+
+const Accordion = ({ items}) => {
  
     const handleClick = (event) => {
         const clickedItem = event.target.closest('.accordion__item');

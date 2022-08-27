@@ -7,9 +7,9 @@ const Promotion = () => {
             <div className="promotion__inner section__inner">
                 <div className="promotion__label">Degens Promoted</div>
                 <div className="promotions__content content">
-                    <CoinCard className="content__coin-card" />
-                    <CoinCard className="content__coin-card" />
-                    <CoinCard className="content__coin-card" />
+                    <CoinCard className="content__coin-card" theme="dark" />
+                    <CoinCard className="content__coin-card" theme="dark" />
+                    <CoinCard className="content__coin-card" theme="dark" />
                 </div>
             </div>
         </div>

@@ -1,0 +1,26 @@
+@import 'styles/variables.scss';
+
+.faq {
+    background-color: $black;
+
+    &__inner {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 2fr;
+        padding-top: 128px;
+        padding-bottom: 128px;
+        grid-gap: 64px;
+    }
+
+    &__teaser, .teaser {
+        margin-top: 64px;
+
+        &__logo {
+            margin-bottom: 16px;            
+        }
+
+    }
+
+
+
+}

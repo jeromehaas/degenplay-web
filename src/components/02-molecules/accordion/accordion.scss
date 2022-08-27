@@ -9,7 +9,7 @@
         grid-template-columns: auto 32px;
         padding: 16px 32px;
         margin-bottom: 16px;
-        @include rainbow-border;
+        @include rainbow-border(2px, $white);
 
         &__heading { }
         

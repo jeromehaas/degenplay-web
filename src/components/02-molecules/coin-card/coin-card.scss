@@ -2,7 +2,7 @@
 @import 'styles/mixins.scss';
 
 .coin-card {
-	@include rainbow-border;
+
     padding: 16px 32px 16px 16px;
     display: grid;
     grid-template-rows: auto;
@@ -60,4 +60,13 @@
     &:hover .coin-card__icon {
         transform: translateX(8px);
     }
+
+    &--theme-dark {
+        @include rainbow-border(2px, $black);
+    }
+
+    &--theme-bright {
+        @include rainbow-border(2px, $white);
+    }
+
 }

@@ -15,6 +15,7 @@
         display: inline-block;
         background: linear-gradient(90deg, $rainbow-color-1, $rainbow-color-2,  $rainbow-color-3, $rainbow-color-4);
         color: $white;
+        z-index: 10;
     }
     
     &__content, .content {

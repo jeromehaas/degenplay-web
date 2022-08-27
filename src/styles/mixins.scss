@@ -3,6 +3,7 @@
 	position: relative;
 	border-radius: 32px;
 	overflow: hidden;
+	z-index: 5;
 
 	&::before {
 		content: "";
@@ -16,6 +17,7 @@
 		background-color: $background-color;
 		margin: $border-width;
 		display: inline-block;
+
 	}
 	
     &::after {

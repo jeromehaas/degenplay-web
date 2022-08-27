@@ -10,6 +10,7 @@ import TeaserBanner from "components/03-organisms/teaser-banner/teaser-banner";
 import DesktopNavigation from "components/03-organisms/desktop-navigation/desktop-navitgation";
 import Promotion from "components/03-organisms/promotion/promotion";
 import Hero from "components/03-organisms/hero/hero";
+import FAQ from "components/03-organisms/faq/faq";
 
 const Start = () => {
 
@@ -19,24 +20,7 @@ const Start = () => {
 			<DesktopNavigation />
 			<Hero />
 			<Promotion />
-			{/* <Button>Start Now</Button> */}
-			{/* <CoinCard /> */}
-			{/* <Logo />
-			<Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a diam ultrices, ullamcorper purus non, tristique mi. Donec at mi scelerisque, imperdiet est eget, porttitor libero. Pellentesque imperdiet euismod ex.</Text>
-			<Link>Explore</Link>
-			<InputText
-				className=""
-				label="label"
-				id="input"
-				placeholder="placeholder"
-				isRequired={ false }
-			/>
-			<InputImage
-				className=""
-				id="image"
-				placeholder="upload image"
-			/> */}
-			<Accordion />
+			<FAQ />
 		</div>
 	);
 
