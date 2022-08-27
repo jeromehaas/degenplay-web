@@ -1,7 +1,7 @@
-const CoinCard = () => {
+const CoinCard = ({ className }) => {
 
     return (
-        <div className="coin-card">
+        <div className={`${ className ? className : '' } coin-card`}>
             <img className="coin-card__thumbnail" src="/images/placeholders/coin.png" alt="asd" />
             <div className="coin-card__infos infos">
                 <div className="infos__labels labels">

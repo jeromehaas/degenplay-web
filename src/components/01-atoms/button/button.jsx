@@ -1,9 +1,10 @@
-const Button = ({ children }) => {
+const Button = ({ children, className }) => {
 
 	return (
-		<a className="button">
+		<a className={`${className ? className : className } button`}>
+			<i className="button__status icon icon--circle"></i>
 			{ children }
-			<i className="button__icon icon icon--arrow"></i>
+			<i className="button__arrow icon icon--arrow"></i>
 		</a>
 	);
 

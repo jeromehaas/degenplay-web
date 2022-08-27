@@ -29,13 +29,13 @@
                 display: inline-block;
                 background-color: $grey-40;
                 color: $grey-60;
-                padding: 8px;
+                padding: 4px;
                 border-radius: 4px;
             }
 
             &__icon { 
                 color: $green-50;
-                font-size: 16px;
+                font-size: 12px;
             }
 
         }
@@ -61,7 +61,3 @@
         transform: translateX(8px);
     }
 }
-
-	// &__icon {
-	// 	font-size: 16px;
-	// }

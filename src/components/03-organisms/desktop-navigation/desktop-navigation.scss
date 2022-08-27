@@ -1,0 +1,23 @@
+.desktop-navigation {
+
+    &__bar, .bar {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center; 
+        gap: 64px;
+        padding: 24px 0;
+
+        &__button {
+            margin-left: auto;
+        }
+
+        &__links {
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+        }
+
+    }
+
+}

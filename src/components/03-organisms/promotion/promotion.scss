@@ -1,0 +1,48 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+@import 'styles/keyframes.scss';
+
+.promotion {
+    position: relative;
+    
+    &__label {
+        background-color: red;
+        position: relative;
+        left: 32px;
+        top: 20px;
+        padding: 8px 16px;
+        border-radius: 4px;
+        display: inline-block;
+        background: linear-gradient(90deg, $rainbow-color-1, $rainbow-color-2,  $rainbow-color-3, $rainbow-color-4);
+        color: $white;
+    }
+    
+    &__content, .content {
+        @include rainbow-border(6px, $black);
+        @include rainbow-border--autoplay;
+        border-radius: 32px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 24px 12px;
+
+        &__coin-card {
+            background-color: $black;
+
+
+            .infos__price {
+                color: $white;
+            }
+
+            .coin-card__icon {
+                color: $white;
+            }
+
+
+
+        }
+
+    }
+
+}

@@ -9,27 +9,61 @@
 	flex-direction: row;
 	align-items: center;
 	overflow: hidden;
-	padding: 8px 32px;
+	padding: 12px 32px 12px 32px;
 	background-color: transparent;
 	color: $black;
 	text-transform: uppercase;
-	background-color: $white;
+	background-color: transparent;
 	border-radius: 32px;
+	background-color: $white;
 
-	&--with-rainbow-border {
-		@include rainbow-border--animated;
+	&__status {
+		padding-right: 16px;
+		display: none;
 	}
 
-
-	&__icon {
+	&__arrow {
 		padding-left: 16px;
 		padding-right: 8px;
 		transition: all 0.3s ease;
 		font-size: 16px;
+		display: none;
 	}
 
-	&:hover .button__icon {
-		transform: translateX(8px);
+	&--with-rainbow-border {
+		@include rainbow-border;
+		@include rainbow-border--hover;
+		background-color: transparent;
 	}
+
+	&--with-arrow {
+
+		.button__arrow {
+			display: block;
+		}
+	
+		&:hover .button__arrow {
+			transform: translateX(8px);
+		}
+
+	}
+
+	&--with-status {
+
+		.button__status, .status {
+			display: block;
+			color: $green-50;
+
+			&--success {
+				color: $green-50;
+			}
+
+			&--error {
+				color: $red-50;
+			}
+		}
+
+	}
+
 
 }

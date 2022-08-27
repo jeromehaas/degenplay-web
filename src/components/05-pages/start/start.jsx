@@ -6,15 +6,19 @@ import InputText from "components/07-form-elements/input-text/input-text";
 import InputImage from "components/07-form-elements/input-image/input-image";
 import Accordion from "components/02-molecules/accordion/accordion";
 import CoinCard from "components/02-molecules/coin-card/coin-card";
-import TeaserBanner from "components/03-molecules/teaser-banner/teaser-banner";
+import TeaserBanner from "components/03-organisms/teaser-banner/teaser-banner";
+import DesktopNavigation from "components/03-organisms/desktop-navigation/desktop-navitgation";
+import Promotion from "components/03-organisms/promotion/promotion";
 
 const Start = () => {
 
 	return (
 		<div className="start">
 			<TeaserBanner/>
-			<Button>Start Now</Button>
-			<CoinCard />
+			<DesktopNavigation />
+			<Promotion />
+			{/* <Button>Start Now</Button> */}
+			{/* <CoinCard /> */}
 			{/* <Logo />
 			<Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a diam ultrices, ullamcorper purus non, tristique mi. Donec at mi scelerisque, imperdiet est eget, porttitor libero. Pellentesque imperdiet euismod ex.</Text>
 			<Link>Explore</Link>
