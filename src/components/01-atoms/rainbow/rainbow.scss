@@ -5,8 +5,14 @@
 	color: inherit;	
 	font-weight: inherit;
 
+	&__word {
+		white-space: nowrap;
+	}
+
+
 	&__letter { 
 		display: inline-block;
+		line-height: inherit;
 	 }
 
 	&__letter:nth-child(4n + 1) { color: $rainbow-color-1 };

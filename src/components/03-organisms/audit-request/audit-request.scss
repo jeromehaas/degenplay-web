@@ -1,0 +1,30 @@
+.audit-request {
+
+	&__form, .form {
+
+		&__fieldset {
+			display: block;
+			margin-bottom: 32px;
+			display: grid;
+		}
+
+		&__general, .general {
+			grid-template-columns: 160px 480px;
+			grid-gap: 32px;
+		}
+
+		&__infos, .infos {
+			grid-template-columns: auto auto;
+			grid-gap: 32px;
+			justify-content: start;
+		}		
+
+		&__actions, .actions {
+			grid-template-columns: auto auto;
+			grid-gap: 32px;
+			justify-content: start;
+		}
+
+	}
+
+}

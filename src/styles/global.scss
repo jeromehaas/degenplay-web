@@ -18,4 +18,14 @@
         position: relative;
         width: 100%;
     }
+
+}
+
+/* HELPER CLASSES*/
+.strike-trough {
+	text-decoration: line-through;
+}
+
+.disabled {
+	opacity: 0.5;
 }

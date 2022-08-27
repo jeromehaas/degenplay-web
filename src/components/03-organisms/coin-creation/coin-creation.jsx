@@ -41,26 +41,26 @@ const CoinCreation = () => {
 					<span className="buy-tax__wrapper">
 						<Text className="buy-tax__label">Tax 1</Text>
 						<InputText className="buy-tax__input buy-tax__input--name-1" id="buy-tax__input--name-1" label=""  placeholder="Tax name" />
-						<InputText className="buy-tax__input buy-tax__input--name-1" id="buy-tax__input--name-1" label=""  placeholder="Limited to 10%" />
-						<InputText className="buy-tax__input buy-tax__input--name-1" id="buy-tax__input--name-1" label=""  placeholder="Wallet tax 1" />
+						<InputText className="buy-tax__input buy-tax__input--name-1" id="buy-tax__input--limit-1" label=""  placeholder="Limited to 10%" />
+						<InputText className="buy-tax__input buy-tax__input--name-1" id="buy-tax__input--address-1" label=""  placeholder="Wallet tax 1" />
 					</span>
 					<span className="buy-tax__wrapper">
 						<Text className="buy-tax__label">Tax 2</Text>
 						<InputText className="buy-tax__input buy-tax__input--name-2" id="buy-tax__input--name-2" label=""  placeholder="Tax name" />
-						<InputText className="buy-tax__input buy-tax__input--name-2" id="buy-tax__input--name-2" label=""  placeholder="Limited to 10%" />
-						<InputText className="buy-tax__input buy-tax__input--name-2" id="buy-tax__input--name-2" label=""  placeholder="Wallet tax 2" />
+						<InputText className="buy-tax__input buy-tax__input--name-2" id="buy-tax__input--limit-2" label=""  placeholder="Limited to 10%" />
+						<InputText className="buy-tax__input buy-tax__input--name-2" id="buy-tax__input--address-2" label=""  placeholder="Wallet tax 2" />
 					</span>
 					<span className="buy-tax__wrapper">
 						<Text className="buy-tax__label">Tax 3</Text>
 						<InputText className="buy-tax__input buy-tax__input--name-3" id="buy-tax__input--name-3" label=""  placeholder="Tax name" />
-						<InputText className="buy-tax__input buy-tax__input--name-3" id="buy-tax__input--name-3" label=""  placeholder="Limited to 10%" />
-						<InputText className="buy-tax__input buy-tax__input--name-3" id="buy-tax__input--name-3" label=""  placeholder="Wallet tax 3" />
+						<InputText className="buy-tax__input buy-tax__input--name-3" id="buy-tax__input--limit-3" label=""  placeholder="Limited to 10%" />
+						<InputText className="buy-tax__input buy-tax__input--name-3" id="buy-tax__input--address-3" label=""  placeholder="Wallet tax 3" />
 					</span>
 					<span className="buy-tax__wrapper">
 						<Text className="buy-tax__label">Tax 4</Text>
 						<InputText className="buy-tax__input buy-tax__input--name-4" id="buy-tax__input--name-4" label=""  placeholder="Tax name" />
-						<InputText className="buy-tax__input buy-tax__input--name-4" id="buy-tax__input--name-4" label=""  placeholder="Limited to 10%" />
-						<InputText className="buy-tax__input buy-tax__input--name-4" id="buy-tax__input--name-4" label=""  placeholder="Wallet tax 4" />
+						<InputText className="buy-tax__input buy-tax__input--name-4" id="buy-tax__input--limit-4" label=""  placeholder="Limited to 10%" />
+						<InputText className="buy-tax__input buy-tax__input--name-4" id="buy-tax__input--address-4" label=""  placeholder="Wallet tax 4" />
 					</span>
 				</fieldset>
 

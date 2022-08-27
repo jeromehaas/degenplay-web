@@ -13,8 +13,8 @@ const Newborns = () => {
                 
                 <div className="newborns__filter filter">
                     <Button className="filter__button button--with-rainbow-border">Audited</Button>
-                    <Button className="filter__button button--with-rainbow-border button--disabled">Not audited</Button>
-                    <Button className="filter__button button--with-rainbow-border button--disabled">All</Button>
+                    <Button className="filter__button button--with-rainbow-border disabled">Not audited</Button>
+                    <Button className="filter__button button--with-rainbow-border disabled">All</Button>
                 </div>
 
                 <div className="newborns__list list">

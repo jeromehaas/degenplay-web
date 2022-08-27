@@ -1,0 +1,17 @@
+.article {
+
+	&__subtitle, 
+	&__title, 
+	&__text {
+		max-width: 480px;
+	}
+
+	&__subtitle {
+		margin-bottom: 16px;
+	}
+
+	&__title {
+		margin-bottom: 16px;
+	}
+	
+}
