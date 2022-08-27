@@ -6,7 +6,6 @@ const InputImage = ({ id, placeholder }) => {
 	const [preview, setPreview] = useState()
 
 	useEffect(() => {
-		console.log(selectedFile);
 		if (!selectedFile) return setPreview(undefined)
 		const objectUrl = URL.createObjectURL(selectedFile)
 		setPreview(objectUrl)

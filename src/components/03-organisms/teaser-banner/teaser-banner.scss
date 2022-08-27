@@ -1,16 +1,12 @@
 @import 'styles/variables.scss';
+@import 'styles/mixins.scss';
 
 .teaser-banner {
-    z-index: 10;
-    position: relative;
-    
-    &__banner, .banner {
-        background: linear-gradient(90deg, $sunrise-color-1, $sunrise-color-2, $sunrise-color-3, $sunrise-color-4);
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        height: 80px;
+	z-index: 10;
+	
+	&__banner, .banner {
+				@include sunrise-background;
+				@include sunrise-background--autoplay;
         
         &__inner {
             height: 100%;
@@ -19,6 +15,7 @@
             flex-direction: row;
             align-items: center;
             justify-content: center;
+						z-index: 10;
         }
         
         &__icon {

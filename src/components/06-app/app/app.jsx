@@ -1,7 +1,12 @@
+import Page from 'components/04-layouts/page/page';
+
 const App = ({ children }) => {
 
 	return (
-		<div>{ children }</div>
+
+		<Page>
+			{ children }
+		</Page>
 	);
 
 };

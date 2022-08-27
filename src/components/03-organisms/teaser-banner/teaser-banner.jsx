@@ -14,7 +14,7 @@ const TeaserBanner = () => {
 
                 <i className="banner__icon icon icon--checkmark "></i>
                 <span className="banner__text text">
-                    <Text className="text__item text--bold">Checkit out:</Text>
+                    <Text className="text__item text--bold">Check it out:</Text>
                     <Text className="text__item">New  DegenPlay Token DGN launched!</Text>
                 </span>
                 <Button>Buy now</Button>

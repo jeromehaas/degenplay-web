@@ -11,12 +11,6 @@ const Newborns = () => {
         <div className="newborns section">
             <div className="newborns__inner section__inner">
                 
-                <div className="newborns__header header">
-                    <Heading className="header__subtitle" level="h3"><Rainbow>Explore Meme Coins</Rainbow></Heading>          
-                    <Heading className="header__title" level="h2">Say hello to newborn gems</Heading>
-                    <Text className="header__text">Invest in the world's creative meme tokens </Text>
-                </div>
-
                 <div className="newborns__filter filter">
                     <Button className="filter__button button--with-rainbow-border">Audited</Button>
                     <Button className="filter__button button--with-rainbow-border button--disabled">Not audited</Button>

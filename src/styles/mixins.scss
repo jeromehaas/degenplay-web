@@ -17,18 +17,17 @@
 		background-color: $background-color;
 		margin: $border-width;
 		display: inline-block;
-
 	}
 	
     &::after {
 		content: "";
         position: absolute;
-		padding: 32px;
+				padding: 32px;
         top: 0px;
         width: 200%;
         bottom: 0px;
         left: -10%;	
-		border-radius: 32px;
+				border-radius: 32px;
         z-index: -10;
         background: linear-gradient(45deg, $rainbow-color-1, $rainbow-color-2,  $rainbow-color-3, $rainbow-color-4,  $rainbow-color-1, $rainbow-color-2, $rainbow-color-3, $rainbow-color-4);
         display: inline-block;
@@ -61,5 +60,47 @@
 		animation-timing-function: linear;
 	}
 
+}
+
+@mixin sunrise-background {
+	position: fixed;
+	overflow: hidden;
+	height: 80px;
+	z-index: 100;
+
+	&::after {	
+		content: "";
+		position: fixed;
+		background: linear-gradient(90deg, $sunrise-color-1, $sunrise-color-2, $sunrise-color-3, $sunrise-color-4);
+		top: 0;
+		left: 0%;
+		width: 200%;
+		height: 80px;
+		margin-bottom: 0;
+		z-index: 5;
+	}
+
+	&::before {	
+		content: "";
+		position: fixed;
+		background: $white;
+		top: 0;
+		left: 0%;
+		width: 200%;
+		height: 80px;
+		margin-bottom: 0;
+		z-index: 5;
+	}
+
+}
+
+@mixin sunrise-background--autoplay {
+
+	&::after {
+		animation-duration: 8s;
+		animation-iteration-count: infinite;
+		animation-name: wander;
+		animation-timing-function: linear;
+	}
 
 }

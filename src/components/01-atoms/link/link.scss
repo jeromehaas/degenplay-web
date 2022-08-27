@@ -45,6 +45,14 @@
 
   }
 
+	&--is-active {
+
+		&::before {
+      transform-origin: left;
+      width: 100% !important;
+		}
+	}
+
   &--with-hover-effect {
 
     &::before {
