@@ -1,9 +1,6 @@
-import Heading from "components/01-atoms/heading/heading";
 import CoinCard from "components/02-molecules/coin-card/coin-card";
 import Button from "components/01-atoms/button/button";
-import Text from "components/01-atoms/text/text";
 import Link from "components/01-atoms/link/link";
-import Rainbow from "components/01-atoms/rainbow/rainbow";
 
 const Newborns = () => {
 

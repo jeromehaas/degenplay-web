@@ -17,8 +17,8 @@ const AuditRequest = () => {
 						<Text className="infos__text text--bold">Now only 99$</Text>
 					</fieldset>
 					<fieldset className="form__actions actions form__fieldset">
-						<Button className="actions__button button--with-rainbow-border">Approve BUSD</Button>
-						<Button className="actions__button button--with-rainbow-border">Pay with BUSD</Button>
+						<Button className="actions__button button--with-rainbow-border button--with-arrow">Approve BUSD</Button>
+						<Button className="actions__button button--with-rainbow-border button--with-arrow">Pay with BUSD</Button>
 					</fieldset>
 				</form>
 			</div>
