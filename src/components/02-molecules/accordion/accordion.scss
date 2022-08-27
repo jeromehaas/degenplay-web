@@ -4,6 +4,7 @@
 .accordion {
     
     &__item, .item {
+				cursor: pointer;
         display: grid;
         grid-template-rows: auto auto;
         grid-template-columns: auto 32px;

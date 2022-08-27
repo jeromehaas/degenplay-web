@@ -1,4 +1,4 @@
-const Input = ({ className, label, placeholder, id, isRequired }) => {
+const InputText = ({ className, label, placeholder, id, isRequired }) => {
 
 	return (
 		<div className="input-text">
@@ -13,4 +13,4 @@ const Input = ({ className, label, placeholder, id, isRequired }) => {
 
 };
 
-export default Input;
+export default InputText;

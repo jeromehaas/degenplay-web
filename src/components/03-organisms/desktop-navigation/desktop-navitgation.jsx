@@ -13,10 +13,10 @@ const DesktopNavigation = () => {
                     <div className="bar__inner section__inner">
                         <Logo className="bar__logo" />
                         <div className="bar__links links">
-                            <Link>Learn</Link>
-                            <Link>Create</Link>
-                            <Link>Explore</Link>
-                            <Link>Audit</Link>
+                            <Link className="links__item link--with-hover-effect">Learn</Link>
+                            <Link className="links__item link--with-hover-effect">Create</Link>
+                            <Link className="links__item link--with-hover-effect">Explore</Link>
+                            <Link className="links__item link--with-hover-effect">Audit</Link>
                         </div>
                         <Button className="bar__button button--with-status button--with-rainbow-border">Connect your wallet</Button>
                     </div>

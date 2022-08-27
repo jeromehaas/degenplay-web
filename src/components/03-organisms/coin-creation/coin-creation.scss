@@ -1,0 +1,85 @@
+.coin-creation {
+
+	&__header, .header {
+		margin-bottom: 64px;
+
+		&__title {
+			text-align: center;
+		}
+
+		&__text {
+			text-align: center;
+		}
+
+	}
+
+	&__form, .form {
+
+		&__fieldset {
+			display: block;
+			margin-bottom: 32px;
+			display: grid;
+		}
+		
+		&__general, .general {
+			grid-template-columns: 80px 2fr 1fr 2fr;
+			grid-gap: 32px;
+		}
+		
+		&__supply, .supply {
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 32px;
+		}
+		
+		&__liquidity, .liquidity {
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 32px;
+		}
+		
+		&__buy-tax, .buy-tax {
+			grid-row-gap: 16px;
+
+			&__wrapper {
+				display: grid;
+				align-items: center;
+				grid-template-columns: 48px 2fr 1fr 2fr;
+				grid-gap: 16px;
+			}
+
+		}
+
+		&__sell-tax, .sell-tax {
+			grid-gap: 16px;
+
+			&__wrapper {
+				display: grid;
+				align-items: center;
+				grid-template-columns: 48px 2fr 1fr 2fr;
+				grid-gap: 16px;
+			}
+
+		}
+
+		&__limits, .limits {
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 32px;
+		}
+
+		&__links, .links {
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 32px;
+			margin-bottom: 64px;
+		}
+
+		&__actions {
+			grid-template-columns: auto auto;
+			justify-content: center;
+			align-items: center;
+			grid-gap: 32px;
+		}
+
+	}
+
+
+	
+}
