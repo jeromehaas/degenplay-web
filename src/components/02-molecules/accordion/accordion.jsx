@@ -1,6 +1,3 @@
-import { useRef } from 'react';
-
-
 const Accordion = ({ items}) => {
  
     const handleClick = (event) => {

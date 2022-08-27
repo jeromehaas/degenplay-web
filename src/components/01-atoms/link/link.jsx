@@ -1,7 +1,7 @@
-const Link = ({ children, className }) => {
+const Link = ({ children, className, href }) => {
 
 	return (
-		<a className="link link--with-hover-effect">{ children }</a>
+		<a className={ `${className} link`} href={ href ? href : '#'}>{ children }</a>
 	);
 
 };

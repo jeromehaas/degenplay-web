@@ -37,7 +37,15 @@
 
 }
 
-@mixin rainbow-border--hover ($border-width: 2px, $background-color: $white) {
+@mixin rainbow-border--background-color($background-color: $white) {
+
+	&::before { 
+		background-color: $background-color;
+	}
+
+}
+
+@mixin rainbow-border--hover ($border-width: 2px) {
 
     &:hover::after {
 		left: -110%;
@@ -45,7 +53,7 @@
 
 }
 
-@mixin rainbow-border--autoplay ($border-width: 2px, $background-color: $white) {
+@mixin rainbow-border--autoplay ($border-width: 2px) {
 	&::after {
 		animation-duration: 4s;
 		animation-iteration-count: infinite;

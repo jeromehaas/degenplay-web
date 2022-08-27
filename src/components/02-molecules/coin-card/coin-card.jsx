@@ -1,7 +1,7 @@
-const CoinCard = ({ className, theme }) => {
+const CoinCard = ({ className }) => {
 
     return (
-        <div className={`${ className ? className : '' } coin-card ${ theme ? `theme--${ theme }` : '' } `}>
+        <div className={ `${ className ? className : '' } coin-card` }>
             <img className="coin-card__thumbnail" src="/images/placeholders/coin.png" alt="asd" />
             <div className="coin-card__infos infos">
                 <div className="infos__labels labels">
@@ -12,7 +12,6 @@ const CoinCard = ({ className, theme }) => {
                 <p className="infos__name">DegenErc 20</p>
                 <p className="infos__price">Price: 0.000012$</p>
             </div>
-            <i className="coin-card__icon icon icon--arrow"></i>
         </div>
     );
 

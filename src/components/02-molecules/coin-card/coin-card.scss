@@ -6,7 +6,7 @@
     padding: 16px 32px 16px 16px;
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: 90px auto 24px;
+    grid-template-columns: 90px auto;
     grid-gap: 16px;
     align-items: center;
 
@@ -61,12 +61,17 @@
         transform: translateX(8px);
     }
 
-    &--theme-dark {
-        @include rainbow-border(2px, $black);
+    &--border {
+        @include rainbow-border(2px)
     }
 
-    &--theme-bright {
-        @include rainbow-border(2px, $white);
+    &--dark {
+        @include rainbow-border--background-color($black);
     }
+
+    &--bright {
+        @include rainbow-border--background-color($white);
+    }
+
 
 }
