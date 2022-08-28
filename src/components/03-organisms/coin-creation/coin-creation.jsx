@@ -4,7 +4,7 @@ import Rainbow from "components/01-atoms/rainbow/rainbow";
 import InputText from "components/07-form-elements/input-text/input-text";
 import InputImage from "components/07-form-elements/input-image/input-image";
 import Button from "components/01-atoms/button/button";
-import Link from "components/01-atoms/link/link";
+import Anchor from "components/01-atoms/anchor/anchor";
 
 const CoinCreation = () => {
 
@@ -13,7 +13,7 @@ const CoinCreation = () => {
 			<div className="coin-creation__inner section__inner">
 				
 			<div className="coin-creation__header header">
-        <Heading className="header__title" level="h2">Let's start that <Rainbow>meme coins</Rainbow>.</Heading>
+        <Heading className="header__title" level="h2">Let's start that <Rainbow>meme coins</Rainbow></Heading>
         <Text className="header__text">Enter details of your token and easily deploy in minutes.</Text>
       </div>
 
@@ -103,8 +103,8 @@ const CoinCreation = () => {
 				</fieldset>
 
 				<fieldset className="form__actions actions form__fieldset">
-					<Button className="actions__button button--with-rainbow-border">Create your token</Button>	
-					<Link className="actions__link link--with-underline">Learn more</Link>
+					<Button className="actions__button button--with-rainbow-border" href="#">Create your token</Button>	
+					<Anchor className="actions__anchor anchor--with-underline" href="/learn">Learn more</Anchor>
 				</fieldset>
 
 			</form>

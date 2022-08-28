@@ -6,6 +6,7 @@
         grid-template-columns: 1fr 1fr;
         grid-gap: 32px;
 				height: 100%;
+				padding-right: 0;
 				min-height: calc(100vh - (80px + 100px));
     }
 

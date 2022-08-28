@@ -1,6 +1,6 @@
 import CoinCard from "components/02-molecules/coin-card/coin-card";
 import Button from "components/01-atoms/button/button";
-import Link from "components/01-atoms/link/link";
+import Anchor from "components/01-atoms/anchor/anchor";
 
 const Newborns = () => {
 
@@ -30,8 +30,8 @@ const Newborns = () => {
                 </div>
 
                 <div className="newborns__actions actions">
-                    <Button className="actions__button button--with-rainbow-border">Create your Own Token</Button>
-                    <Link className="actions__link link--with-underline">Learn more</Link>
+                    <Button className="actions__button button--with-rainbow-border" href="/create">Create your Own Token</Button>
+                    <Anchor className="actions__anchor anchor--with-underline" href="/learn">Learn more</Anchor>
                 </div>
 
             </div>

@@ -5,7 +5,7 @@ const TeaserBanner = () => {
 
     return  (
         <div className="teaser-banner">
-          <div className="teaser-banner">
+          <div className="teaser-banner__inner">
 						<div className="teaser-banner__cover"></div>
 						<div className="teaser-banner__banner banner section">
 							<div className="banner__inner section__inner">

@@ -25,7 +25,7 @@ const InputImage = ({ id, placeholder }) => {
 		<div className="input-image">
 			<input className="input-image__field" id={id} type="file" onChange={ handleChange } />
 			<label className="input-image__label" htmlFor={id}>{placeholder}</label>
-			{ selectedFile &&  <img class="input-image__thumbnail" src={preview} alt="Thumbnail" /> }
+			{ selectedFile &&  <img className="input-image__thumbnail" src={preview} alt="Thumbnail" /> }
 		</div>
 	)
 };

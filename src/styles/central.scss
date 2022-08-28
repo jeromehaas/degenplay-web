@@ -10,7 +10,7 @@
 @import url('components/01-atoms/rainbow/rainbow.scss');
 @import url('components/01-atoms/logo/logo.scss');
 @import url('components/01-atoms/button/button.scss');
-@import url('components/01-atoms/link/link.scss');
+@import url('components/01-atoms/anchor/anchor.scss');
 @import url('components/01-atoms/text/text.scss');
 
 /* MOLECULES */
@@ -28,6 +28,7 @@
 @import url('components/03-organisms/article/article.scss');
 @import url('components/03-organisms/audit-request/audit-request.scss');
 @import url('components/03-organisms/notifier/notifier.scss');
+@import url('components/03-organisms/mobile-navigation/mobile-navigation.scss');
 
 /* PAGES */
 @import url('components/05-pages/start/start.scss');

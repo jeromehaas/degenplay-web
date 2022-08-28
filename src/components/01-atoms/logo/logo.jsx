@@ -4,9 +4,7 @@ import Rainbow from "components/01-atoms/rainbow/rainbow";
 const Logo = ({ className }) => {
 
 	return (
-		<Link to="/">
-			<p className={`${ className ? className : '' } logo `}>Degen<Rainbow>play</Rainbow></p>
-		</Link>
+		<p className={`${ className ? className : '' } logo `}>Degen<Rainbow>play</Rainbow></p>
 	);
 
 };

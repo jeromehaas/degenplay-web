@@ -4,12 +4,11 @@
 .button {
 	cursor: pointer;
 	position: relative;
-	padding: 32px;
 	display: inline-flex;
 	flex-direction: row;
 	align-items: center;
 	overflow: hidden;
-	padding: 12px 32px 12px 32px;
+	padding: 12px 24px;
 	background-color: transparent;
 	color: $black;
 	text-transform: uppercase;

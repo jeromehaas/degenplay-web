@@ -1,3 +1,6 @@
+import Heading from "components/01-atoms/heading/heading";
+import Text from "components/01-atoms/text/text";
+
 const Accordion = ({ items}) => {
  
     const handleClick = (event) => {
@@ -14,9 +17,9 @@ const Accordion = ({ items}) => {
         <div className="accordion">
             { items && items.map((item, index) => (
                 <div className="accordion__item item" key={ index } onClick={ handleClick }>
-                    <div className="item__heading">{ item.question }</div>
+                    <Text className="item__heading">{ item.question }</Text>
                     <i className="item__icon icon icon--caret"></i>
-                    <div className="item__text">{ item.answer }</div>
+                    <Text className="item__text">{ item.answer }</Text>
                 </div>
             ))}
         </div>
