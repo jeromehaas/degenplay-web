@@ -90,7 +90,7 @@
 
     }
 
-    @media (max-width: 375px) {
+    @media (max-width: 400px) {
 
         &__banner, .banner {
 		    @include sunrise-background(80px);

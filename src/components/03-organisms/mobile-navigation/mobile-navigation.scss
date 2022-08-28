@@ -21,7 +21,7 @@
             flex-direction: row;
             justify-content: space-between;
             align-items: center; 
-            gap: 64px;
+            gap: 32px;
             padding-top: 24px;
             padding-bottom: 24px;
             width: 100%;
@@ -45,13 +45,13 @@
 	&__menu, .menu {
 		background-color: $black;
 		position: fixed;
-		top: calc(80px + 64px - 40px);
+		top: calc(80px + 64px - 48px);
 		right: 0;
 		bottom: 0;
 		left: 0;
 		z-index: 15;
 		transition: all 0.3s ease;
-		height: 40px;
+		height: 48px;
 
 		&__links, .links {
 			display: flex;
@@ -112,14 +112,79 @@
 
 			&__bar, .bar {
 				top: 120px;
+	
+				&__hamburger {
+					width: 40px;
+					height: 40px;
+					position: relative;
+					right: -8px;
+				}
+
+				&__button {
+					display: none;
+				}
+	
+			}
+
+			&__cover {
+				top: 120px;
+			}
+
+			& .mobile-navigation__menu, .menu {
+				top: calc(120px + 64px - 48px);
+			}
+			
+			&--menu-is-visible  {
+
+				.mobile-navigation__menu, .menu {
+					top: calc(120px + 64px);
+				}
+				
 			}
 
 		}
 
-		@media (max-width: 375px) {
+		@media (max-width: 400px) {
 
 			&__bar, .bar {
 				top: 80px;
+			}
+
+			&__cover {
+				top: 80px;
+			}
+
+			& .mobile-navigation__menu, .menu {
+				top: calc(80px + 64px - 180px);
+			}
+			
+			&--menu-is-visible  {
+
+				.mobile-navigation__menu, .menu {
+					top: calc(80px + 64px);
+				}
+				
+			}
+
+			&__menu, .menu {
+				height: 180px;
+
+				&__links, .links {
+					flex-direction: column;
+					padding: 0;
+					gap: 0;
+
+					&__item {
+						width: 100%;
+						border-bottom: 1px solid white;
+						text-align: center;
+						padding: 8px 24px;
+
+						&:last-child {
+							border-bottom: 0;
+						}
+					}
+				}
 			}
 
 		}
