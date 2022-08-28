@@ -1,7 +1,7 @@
 const InputText = ({ className, label, placeholder, id, isRequired }) => {
 
 	return (
-		<div className="input-text">
+		<div className={` ${className ? className : '' } input-text `}>
 			{ label && 
 			<label className="input-text__label-wrapper" htmlFor={ id }>
 				<span className="input-text__label input-text__label--left">{ label }</span> 

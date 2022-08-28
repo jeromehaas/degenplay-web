@@ -15,8 +15,17 @@ const MobileNavigation = () => {
 
 	const handleClick = () => {
 		updateHamburger();
+		toggleMenu();
+		scrollToTop();
+	};
+	
+	const toggleMenu = () => {
 		setMenuIsVisible(!menuIsVisible);
 	};
+
+	const scrollToTop = () => {
+		window.scrollTo(0, 0);
+	}
 	
 	const updateHamburger = () => {
 		const lottie = hamburger.current;

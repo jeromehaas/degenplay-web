@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const InputImage = ({ id, placeholder }) => {
+const InputImage = ({ id, placeholder, className }) => {
 	
 	const [selectedFile, setSelectedFile] = useState()
 	const [preview, setPreview] = useState()
@@ -22,7 +22,7 @@ const InputImage = ({ id, placeholder }) => {
 }
 
 	return (
-		<div className="input-image">
+		<div className={` ${ className ? className : '' } input-image`}>
 			<input className="input-image__field" id={id} type="file" onChange={ handleChange } />
 			<label className="input-image__label" htmlFor={id}>{placeholder}</label>
 			{ selectedFile &&  <img className="input-image__thumbnail" src={preview} alt="Thumbnail" /> }

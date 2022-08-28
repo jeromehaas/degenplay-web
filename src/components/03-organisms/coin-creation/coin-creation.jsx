@@ -13,17 +13,17 @@ const CoinCreation = () => {
 			<div className="coin-creation__inner section__inner">
 				
 			<div className="coin-creation__header header">
-        <Heading className="header__title" level="h2">Let's start that <Rainbow>meme coins</Rainbow></Heading>
-        <Text className="header__text">Enter details of your token and easily deploy in minutes.</Text>
-      </div>
+      		  	<Heading className="header__title" level="h2">Let's start that <Rainbow>meme coins</Rainbow></Heading>
+      		  	<Text className="header__text">Enter details of your token and easily deploy in minutes.</Text>
+      		</div>
 
 			<form className="coin-creation__form form">
 
 				<fieldset className="form__general general form__fieldset">
 					<InputImage className="general__input general__input--image" id="general__input--image" placeholder="Upload Image"  />
-					<InputText className="general__input general__input--token-name" id="general__input--token-name" label="Token Name"  placeholder="Ex: Bitcoin" />
+					<InputText className="general__input general__input--name" id="general__input--name" label="Token Name"  placeholder="Ex: Bitcoin" />
 					<InputText className="general__input general__input--chain" id="general__input--chain" label="Chain"  placeholder="ERC" />
-					<InputText className="general__input general__input--token-" id="general__input--symbol" label="Symbol"  placeholder="Ex: BTC" />
+					<InputText className="general__input general__input--symbol" id="general__input--symbol" label="Symbol"  placeholder="Ex: BTC" />
 				</fieldset>
 				
 				<fieldset className="form__supply supply form__fieldset">
@@ -37,7 +37,7 @@ const CoinCreation = () => {
 				</fieldset>
 
 				<fieldset className="form__buy-tax buy-tax form__fieldset">
-					<Text className="buy-tax__label">Set buy tax amount (%)</Text>
+					<Text className="buy-tax__header">Set buy tax amount (%)</Text>
 					<span className="buy-tax__wrapper">
 						<Text className="buy-tax__label">Tax 1</Text>
 						<InputText className="buy-tax__input buy-tax__input--name-1" id="buy-tax__input--name-1" label=""  placeholder="Tax name" />
@@ -65,7 +65,7 @@ const CoinCreation = () => {
 				</fieldset>
 
 				<fieldset className="form__sell-tax sell-tax form__fieldset">
-					<Text className="buy-tax__label">Set sell tax amount (%)</Text>
+					<Text className="buy-tax__header">Set sell tax amount (%)</Text>
 					<span className="sell-tax__wrapper">
 						<Text className="sell-tax__label">Tax 1</Text>
 						<InputText className="sell-tax__input sell-tax__input--name-1" id="sell-tax__input--name-1" label=""  placeholder="Tax name" />
