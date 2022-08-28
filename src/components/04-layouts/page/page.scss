@@ -22,4 +22,16 @@
 		background-color: $blue-50;
 	}
 
+	&--white *::selection {
+		color: inherit !important;
+		background-color: $white;
+	}
+
 }
+
+
+	.rainbow__letter::selection {
+		color: transparent !important;
+		-webkit-text-stroke: 1px white
+	}
+

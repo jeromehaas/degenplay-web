@@ -19,6 +19,13 @@
         width: 100%;
     }
 
+    @media (max-width: 400px) {
+
+        &__inner {
+            padding: 0 24px;
+        }
+    }
+
 }
 
 /* HELPER CLASSES*/

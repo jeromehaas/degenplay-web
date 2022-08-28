@@ -9,8 +9,8 @@
 	}
 	
 	&__banner, .banner {
-				@include sunrise-background;
-				@include sunrise-background--autoplay;
+		@include sunrise-background(80px);
+	    @include sunrise-background--autoplay;
         
         &__inner {
             height: 100%;
@@ -19,7 +19,8 @@
             flex-direction: row;
             align-items: center;
             justify-content: center;
-						z-index: 10;
+			z-index: 10;
+            gap: 16px;
         }
         
         &__icon {
@@ -37,7 +38,9 @@
 
         }
 
-        &__button {}
+        &__button {
+            flex-shrink: 0;
+        }
 
     }
 
@@ -52,6 +55,51 @@
         left: 0;
         height: 80px;
         background-color: $white;
+    }
+
+    @media (max-width: 700px) {
+
+        &__banner, .banner {
+
+            &__icon {
+                display: none;
+            }
+            
+        }
+
+    }
+
+    @media (max-width: 500px) {
+
+        &__banner, .banner {
+		    @include sunrise-background(120px);
+            
+            &__inner {
+                flex-direction: column;
+            }
+
+            &__text {
+                text-align: center;
+
+                & .text--bold {
+                    display: none;
+                }
+            }
+        
+        }
+
+    }
+
+    @media (max-width: 375px) {
+
+        &__banner, .banner {
+		    @include sunrise-background(80px);
+
+            &__button {
+                display: none;
+            }
+        }
+
     }
 
 }
