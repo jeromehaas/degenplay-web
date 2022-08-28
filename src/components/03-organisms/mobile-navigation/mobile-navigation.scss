@@ -130,6 +130,10 @@
 				top: 120px;
 			}
 
+			 &__placeholder {
+    		    height: 40px;
+  			}
+
 			& .mobile-navigation__menu, .menu {
 				top: calc(120px + 64px - 48px);
 			}

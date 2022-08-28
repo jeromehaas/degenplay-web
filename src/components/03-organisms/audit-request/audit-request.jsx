@@ -10,7 +10,7 @@ const AuditRequest = () => {
 				<form className="audit-request__form form">
 					<fieldset className="form__general general form__fieldset">
 						<InputText className="general__input general__input--chain" id="general__input--chain" label="Chain"  placeholder="ERC-20" />
-						<InputText className="general__input general__input--token-address" id="general__input--token-address" label="Token address"  placeholder="Insert token adress to request audit" />
+						<InputText className="general__input general__input--address" id="general__input--address" label="Token address"  placeholder="Insert token adress to request audit" />
 					</fieldset>
 					<fieldset className="form__infos infos form__fieldset">
 						<Text className="infos__text disabled">Quick Audit price: <span className="strike-trough">199$</span></Text>

@@ -4,7 +4,7 @@
 .accordion {
     
     &__item, .item {
-				cursor: pointer;
+	    cursor: pointer;
         display: grid;
         grid-template-rows: auto auto;
         grid-template-columns: auto 32px;
@@ -32,5 +32,18 @@
         }
         
     }
+
+    @media (max-width: 400px) {
+
+        &__item, .item {
+            grid-template-columns: 1fr;
+
+            &__icon {
+                display: none;
+            }
+        }
+
+    }
+
 
 }
