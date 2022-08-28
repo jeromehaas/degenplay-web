@@ -21,6 +21,19 @@
 
     }
 
+    @media (max-width: 800px) {
+
+        &__inner {
+            grid-template-rows: auto auto;
+            grid-template-columns: 1fr;
+        }
+
+        &__teaser, .teaser {
+            margin-top: 0;
+        }
+
+    }
+
 
 
 }
