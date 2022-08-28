@@ -34,4 +34,12 @@
         display: block;
     }
 
+		@media (max-width: 950px) {
+
+			&__inner {
+				min-height: calc(100vh - (80px + 64px));
+			}
+
+		}
+
 }

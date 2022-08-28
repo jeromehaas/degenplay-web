@@ -1,0 +1,25 @@
+@import 'styles/variables.scss';
+
+.page__selection {
+	
+	&--red *::selection {
+		color: #ffffff !important;
+		background-color: $red-50;
+	}
+	
+	&--orange *::selection {
+		color: #ffffff !important;
+		background-color: $orange-50;
+	}
+	
+	&--green *::selection {
+		color: #ffffff !important;
+		background-color: $green-50;
+	}
+	
+	&--blue *::selection {
+		color: #ffffff !important;
+		background-color: $blue-50;
+	}
+
+}

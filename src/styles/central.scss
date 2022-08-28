@@ -30,13 +30,15 @@
 @import url('components/03-organisms/notifier/notifier.scss');
 @import url('components/03-organisms/mobile-navigation/mobile-navigation.scss');
 
+/* LAYOUTS */
+@import url('components/04-layouts/page/page.scss');
+
 /* PAGES */
 @import url('components/05-pages/start/start.scss');
 @import url('components/05-pages/learn/learn.scss');
 @import url('components/05-pages/create/create.scss');
 @import url('components/05-pages/explore/explore.scss');
 @import url('components/05-pages/audit/audit.scss');
-
 
 /* FORM ELEMENTS */
 @import url('components/07-form-elements/input-text/input-text.scss');
