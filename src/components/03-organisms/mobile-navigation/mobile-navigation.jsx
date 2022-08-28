@@ -10,7 +10,6 @@ const MobileNavigation = () => {
 
 	const [menuIsVisible, setMenuIsVisible] = useState(false);
 	const location = useLocation();
-	const pathname = location.pathname;
 	const container = useRef();
 	const hamburger = useRef();
 
@@ -31,7 +30,7 @@ const MobileNavigation = () => {
 			renderer: 'svg',
 			loop: false,
 			autoplay: false,
-			path: '/lotties/hamburger.json' // the path to the animation json
+			path: '/lotties/hamburger.json'
 		});
 		hamburger.current.setSpeed(2.5);
 	};
@@ -41,17 +40,6 @@ const MobileNavigation = () => {
 		return () => hamburger.current.destroy(); 
 	}, []);
 
-	// useEffect(() => {
-	// 	console.log('one more time')
-	// 	lottie = Lottie.loadAnimation({
-	// 		container: element, // the dom element that will contain the animation
-	// 		renderer: 'svg',
-	// 		loop: true,
-	// 		autoplay: true,
-	// 		path: 'data.json' // the path to the animation json
-	// 	});
-	// }, []);
-
 	return (
 			<nav className={ `mobile-navigation ${ menuIsVisible ? 'mobile-navigation--menu-is-visible' : ''} `} >
 
@@ -59,7 +47,7 @@ const MobileNavigation = () => {
 
 							<div className="mobile-navigation__bar bar section">
 									<div className="bar__inner section__inner">
-											<Link className="bar__logo-wrapper" to="/">
+											<Link className="bar__logo-wrapper" to="/" >
 												<Logo className="bar__logo" />
 											</Link>
 											<div className="bar__hamburger" ref={ container } onClick={ handleClick }></div>
@@ -71,11 +59,11 @@ const MobileNavigation = () => {
 							
 							<div className="mobile-navigation__menu menu">
 								<div className="menu__links">
-									<Link className="links__item anchor" to="/">Home</Link>
-									<Link className="links__item anchor" to="/learn">Learn</Link>
-									<Link className="links__item anchor" to="/create">Create</Link>
-									<Link className="links__item anchor" to="/explore">Explore</Link>
-									<Link className="links__item anchor" to="/audit">Audit</Link>
+									<Link className="links__item anchor" onClick={ handleClick }to="/">Home</Link>
+									<Link className="links__item anchor" onClick={ handleClick }to="/learn">Learn</Link>
+									<Link className="links__item anchor" onClick={ handleClick }to="/create">Create</Link>
+									<Link className="links__item anchor" onClick={ handleClick }to="/explore">Explore</Link>
+									<Link className="links__item anchor" onClick={ handleClick }to="/audit">Audit</Link>
 								</div>	
 							</div>
 							

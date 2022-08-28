@@ -102,7 +102,32 @@
 	font-size: 32px;
 }
 
+@media (max-width: 1000px) {
+
+	.heading {
+
+		&--h1 { 
+			font-size: 56px;
+		}
+
+	}
+
+}
+
+@media (max-width: 800px) {
+
+	.heading {
+
+		&--h1 { 
+			font-size: 40px;
+		}
+
+	}
+
+}
+
 @media (max-width: 700px) {
+
 
 	.text {
 		font-size: 16px;

@@ -2,7 +2,7 @@ const CoinCard = ({ className }) => {
 
     return (
         <div className={ `${ className ? className : '' } coin-card` }>
-            <img className="coin-card__thumbnail" src="/images/placeholders/coin.png" alt="asd" />
+            <img className="coin-card__thumbnail" src="/images/placeholders/grey-space.svg" alt="asd" />
             <div className="coin-card__infos infos">
                 <div className="infos__labels labels">
                     <div className="labels__item">DGE</div>

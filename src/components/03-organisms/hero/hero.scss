@@ -4,10 +4,10 @@
         display: grid;
         grid-template-rows: auto;
         grid-template-columns: 1fr 1fr;
-        grid-gap: 32px;
-				height: 100%;
-				padding-right: 0;
-				min-height: calc(100vh - (80px + 100px));
+        grid-gap: 64px;
+		height: 100%;
+		padding-right: 0;
+		min-height: calc(100vh - (80px + 100px));
     }
 
     &__info, .info {
@@ -41,5 +41,37 @@
 			}
 
 		}
+
+        @media (max-width: 700px) {
+
+            &__inner {
+                grid-template-rows: auto auto;
+                grid-template-columns: 1fr;
+                grid-gap: 32px;
+                padding-right: 32px;
+                min-height: calc(100vh - (80px + 100px));
+            }
+
+            &__wallpaper {
+                order: 1;
+                margin-top: 72px;
+                width: 100%;
+                height: 400px;
+            }
+
+            &__info {
+                order: 2;
+                margin-top: 32px;
+            }
+
+        }
+
+        @media (max-width: 400px) {
+
+            &__wallpaper {
+                margin-top: 16px;
+            }
+
+        }
 
 }
