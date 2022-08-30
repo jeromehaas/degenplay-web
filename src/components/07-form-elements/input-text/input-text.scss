@@ -18,7 +18,7 @@
 	}
 
 	&__field {
-		border: none;
+		border: 2px solid $white;
 		outline: none;
 		padding: 12px 24px;
 		border-radius: 32px;
@@ -27,6 +27,11 @@
 
 		&::placeholder {
 			color: $grey-60;
+		}
+
+		&:active,
+		&:focus {
+			border: 2px solid $orange-50;
 		}
 	}
 

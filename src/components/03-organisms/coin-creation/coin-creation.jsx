@@ -8,6 +8,11 @@ import Anchor from "components/01-atoms/anchor/anchor";
 
 const CoinCreation = () => {
 
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		console.log('submit');
+	};
+
 	return (
 		<div className="coin-creation section">
 			<div className="coin-creation__inner section__inner">
@@ -103,7 +108,7 @@ const CoinCreation = () => {
 				</fieldset>
 
 				<fieldset className="form__actions actions form__fieldset">
-					<Button className="actions__button button--with-rainbow-border" href="#">Create your token</Button>	
+					<Button className="actions__button button--with-rainbow-border" type="submit" href="#" onClick={ handleSubmit }>Create your token</Button>	
 					<Anchor className="actions__anchor anchor--with-underline" href="/learn">Learn more</Anchor>
 				</fieldset>
 

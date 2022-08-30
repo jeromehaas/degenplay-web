@@ -1,37 +1,56 @@
 @import 'styles/variables.scss';
 
-.page__selection {
+.page__random-color {
 	
-	&--red *::selection {
-		color: #ffffff !important;
-		background-color: $red-50;
-	}
-	
-	&--orange *::selection {
-		color: #ffffff !important;
-		background-color: $orange-50;
-	}
-	
-	&--green *::selection {
-		color: #ffffff !important;
-		background-color: $green-50;
-	}
-	
-	&--blue *::selection {
-		color: #ffffff !important;
-		background-color: $blue-50;
+	&--red {
+		
+		*::selection {
+			color: #ffffff !important;
+			background-color: $red-50;
+		}
+
 	}
 
-	&--white *::selection {
-		color: inherit !important;
-		background-color: $white;
+	
+	&--orange {
+		
+		*::selection {
+			color: #ffffff !important;
+			background-color: $orange-50;
+		}
+
 	}
+
+	&--green {
+		
+		*::selection {
+			color: #ffffff !important;
+			background-color: $green-50;
+		}
+	
+	}
+
+	&--blue {
+		
+		*::selection {
+			color: #ffffff !important;
+			background-color: $blue-50;
+		}
+
+	}
+
+	&--white {
+		
+		*::selection {
+			color: inherit !important;
+			background-color: $white;
+		}
+
+	}
+
+
 
 }
 
 
-	.rainbow__letter::selection {
-		color: transparent !important;
-		-webkit-text-stroke: 1px white;
-	}
 
