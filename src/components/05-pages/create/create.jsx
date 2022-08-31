@@ -4,7 +4,7 @@ const Create = () => {
 
 	return (
 		<div className="create">
-				<CoinCreation />
+			<CoinCreation />
 		</div>
 	);
 

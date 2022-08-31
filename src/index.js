@@ -6,21 +6,26 @@ import  Learn from './components/05-pages/learn/learn';
 import  Create from './components/05-pages/create/create';
 import  Explore from './components/05-pages/explore/explore';
 import  Audit from './components/05-pages/audit/audit';
+import Login from 'components/05-pages/login/login';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import PrivateRoutes from 'utils/PrivateRoutes';
 
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
 
 root.render(
 	<BrowserRouter>
-			<App>
-				<Routes>
+		<App>
+			<Routes>
+				<Route element={<PrivateRoutes />}>
 					<Route path="/" exact element={ <Start /> } />
 					<Route path="/learn" exact element={ <Learn /> } />
 					<Route path="/create" exact element={ <Create /> } />
 					<Route path="/explore" exact element={ <Explore /> } />
 					<Route path="/audit" exact element={ <Audit /> } />
-				</Routes>
-			</App>
-		</BrowserRouter>
-)
+				</Route>
+				<Route path="/login" exact element={ <Login /> } />
+			</Routes>
+		</App>
+	</BrowserRouter>
+);

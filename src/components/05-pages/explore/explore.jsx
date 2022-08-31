@@ -6,9 +6,9 @@ const Explore = () => {
 
 	return (
 		<div className="explore">
-				<Article subtitle="EXPLORE MEME COINS" title="Say hello to newborn gems" text="Invest in the world's creative meme tokens." />
-				<Promotion />
-				<Newborns />	
+			<Article subtitle="EXPLORE MEME COINS" title="Say hello to newborn gems" text="Invest in the world's creative meme tokens." />
+			<Promotion />
+			<Newborns />	
 		</div>
 	);
 

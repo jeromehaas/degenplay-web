@@ -1,12 +1,15 @@
 import Page from 'components/04-layouts/page/page';
+import { AppProvider } from 'context/app-context';
 
 const App = ({ children }) => {
 
-	return (
 
-		<Page>
-			{ children }
-		</Page>
+	return (
+		<AppProvider>
+			<Page>
+				{ children }
+			</Page>
+		</AppProvider>
 	);
 
 };

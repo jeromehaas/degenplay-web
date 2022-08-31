@@ -9,6 +9,9 @@
       "components/*": [
         "src/components/*"
       ],
+      "utils/*": [
+        "src/utils/*"
+      ],     
       "functions/*": [
         "src/functions/*"
       ],
