@@ -4,56 +4,30 @@ import { useEffect, useState } from 'react';
 
 const MetamaskStatus = ({ className }) => {
 
-    const [errorMessage, setErrorMessage ] = useState(null);
     const [account, setAccount] = useState(null);
-    const [balance, setBalance] = useState(null);
+		const provider = new ethers.providers.Web3Provider(window.ethereum);
+		const ethereum = window.ethereum;
+
+		console.log(ethereum);
  
-    useEffect(() => {
-        if (window.ethereum) {
-          window.ethereum.on("accountsChanged", accountsChanged);
-          window.ethereum.on("chainChanged", chainChanged);
-        }
-      }, []);
+		const connectWallet = async () => {
+			const account = await ethereum.request({ method: 'eth_requestAccounts'});
+			setAccount(account);
+		};
 
-    const connectHandler = async () => {
-        if (window.ethereum) {
-          try {
-            const res = await window.ethereum.request({
-              method: "eth_requestAccounts",
-            });
-            await accountsChanged(res[0]);
-          } catch (err) {
-            console.error(err);
-            setErrorMessage("There was a problem connecting to MetaMask");
-          }
-        } else {
-          setErrorMessage("Install MetaMask");
-          console.log('hello')
-        }
-      };
+		useEffect(() => {
 
-    const accountsChanged = async (newAccount) => {
-        setAccount(newAccount);
-        try {
-          const balance = await window.ethereum.request({
-            method: "eth_getBalance",
-            params: [newAccount.toString(), "latest"],
-          });
-          setBalance(ethers.utils.formatEther(balance));
-        } catch (err) {
-          console.error(err);
-          setErrorMessage("There was a problem connecting to MetaMask");
-        }
-      };
+		}, [account, connectWallet])
 
-    const chainChanged = () => {
-        setErrorMessage(null);
-        setAccount(null);
-        setBalance(null);
-    };
+
+
+
+
+
+
 
     return (
-        <Button className={`${ className ? className : ''} metamask-status`} onClick={ connectHandler }>
+        <Button className={`${ className ? className : ''} metamask-status`} onClick={ connectWallet }>
             { account  
             ? 'Connected'
             : 'Not Connected' }

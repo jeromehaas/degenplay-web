@@ -1,16 +1,14 @@
 import { Outlet, Navigate } from 'react-router-dom';
-import { useContext } from 'react';
-import { AppContext } from "context/app-context";
-
-
-
+import cookie from 'react-cookies';
+import { sha256 } from 'js-sha256';
+ 
 const PrivateRoutes = () => {
     
-    const value = useContext(AppContext);  
-    const { isLoggedIn } = value;
-
+	const token = cookie.load('session');
+	const isLoggedIn = token === sha256(process.env.REACT_APP_LOGIN_CODE) ? true : false;
+		
     return (
-        isLoggedIn ? <Outlet /> : <Navigate to="/login" />
+      isLoggedIn ? <Outlet /> : <Navigate to="/login" />
     );
 
 };

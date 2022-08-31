@@ -1,26 +1,15 @@
 import Logo from 'components/01-atoms/logo/logo';
-import { useState, useEffect, useContext } from 'react'
+import { useState, useEffect } from 'react'
 import cookie from 'react-cookies';
-import { sha256, sha224 } from 'js-sha256';
+import { sha256 } from 'js-sha256';
 import { useNavigate } from 'react-router-dom';
-import { AppContext } from "context/app-context";
 
 const LoginForm = () => {
 
-    const value = useContext(AppContext);  
-	  const { setIsLoggedIn } = value;
-
     const navigate = useNavigate();
-
     const [ input, setInput ] = useState('');
-	
-    const updateInput = (value) => {
-        setInput(input + value);
-    };
-
-    const resetInput = () => {
-        setInput('');
-    };
+    const updateInput = (value) => setInput(input + value);;
+    const resetInput = () => setInput('');
 
     const storeSessionCookie = (value) => {
         const token = sha256(value); 
@@ -31,9 +20,8 @@ const LoginForm = () => {
         if (input.length !== 6) return;
         if (input !== process.env.REACT_APP_LOGIN_CODE) return resetInput();
         storeSessionCookie(input);
-        setIsLoggedIn(true);
         navigate('/');
-    }, [input]);
+    }, [input, navigate]);
 
   return (
     <div className="login-form">
