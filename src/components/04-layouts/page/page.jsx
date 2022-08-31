@@ -15,7 +15,7 @@ const Page = ({ className, children }) => {
 		const randomColor = colors[Math.floor(Math.random() * colors.length)];
 		if (randomColor === currentColor) return updateRandomColor();
 		element.classList.remove('page__random-color--red', 'page__random-color--orange', 'page__random-color--green', 'page__random-color--blue', )	
-		element.classList.add(`page__selection--white`);
+		element.classList.add(`page__random-color--white`);
 		setTimeout(() =>  {
 			element.classList.remove('page__random-color--white', )	
 			element.setAttribute('data-color', randomColor);

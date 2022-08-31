@@ -36,9 +36,3 @@
 .disabled {
 	opacity: 0.5;
 }
-
-/* RAINBOW SELECTION */
-.rainbow .rainbow__letter::selection {
-	color: transparent !important;
-	-webkit-text-stroke: 1px white;
-}

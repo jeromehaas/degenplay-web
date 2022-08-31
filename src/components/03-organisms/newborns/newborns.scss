@@ -8,14 +8,15 @@
         width: 100%;
         display: flex;
         flex-direction: row;
-        justify-content: flex-end;
+        justify-content: flex-start;
         gap: 16px;
         margin-bottom: 32px;
     }
 
     &__list, .list {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, 280px);
+        justify-content: start;;
         grid-gap: 16px;
         margin-bottom: 48px;
     }
@@ -26,6 +27,25 @@
         align-items: center;
         justify-content: center;
         gap: 32px;
+
+    }
+
+    @media (max-width: 400px) {
+
+        &__filter, .filter {
+            flex-direction: column;
+            
+            & .button {
+                display: flex !important;
+                justify-content: center;
+            }
+            
+        }
+
+        &__actions, .actions {
+            flex-direction: column;
+            gap: 16px;
+        }
 
     }
 

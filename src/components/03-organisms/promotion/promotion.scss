@@ -4,11 +4,11 @@
 
 .promotion {
     position: relative;
+
     
     &__label {
-        background-color: red;
         position: relative;
-        left: 32px;
+        left: 48px;
         top: 20px;
         padding: 8px 16px;
         border-radius: 4px;
@@ -21,12 +21,13 @@
     &__content, .content {
         @include rainbow-border(6px, $black);
         @include rainbow-border--autoplay;
-        border-radius: 32px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 24px;
-        padding: 24px 12px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(auto, 320px));
+        justify-content: flex-start;
+        grid-gap: 16px;
+        width: auto;
+        max-width: 1060px;
+        padding: 32px;
 
         &__coin-card {
             background-color: $black;
@@ -45,5 +46,21 @@
         }
 
     }
+
+    @media (max-width: 400px) {
+
+        &__content, .content {
+            @include rainbow-border(6px, $black);
+            @include rainbow-border--autoplay;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(auto, 320px));
+            justify-content: flex-start;
+            grid-gap: 16px;
+            width: auto;
+            max-width: 1060px;
+            padding: 32px 8px;
+    }
+
+}
 
 }
