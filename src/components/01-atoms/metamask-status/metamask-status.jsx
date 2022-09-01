@@ -7,18 +7,21 @@ const MetamaskStatus = ({ className }) => {
 		const ethereum = window.ethereum;
  
 		const connectWallet = async () => {
+			if (!window.ethereum) return;
 			const accounts = await ethereum.request({ method: 'eth_requestAccounts'});
 			const account = accounts[0];
 			setAccount(account);
 		};
 
 		const checkConnected = async () => {
+			if (!window.ethereum) return;
 			const accounts = await ethereum.request({ method: 'eth_accounts'});
 			const account = accounts[0]
 			account ? setAccount(account) : setAccount(null);
 		};
   
 		useEffect(() => {
+			if (!window.ethereum) return;
 			checkConnected();
 			window.ethereum.on('accountsChanged', checkConnected);
 		}, []);
