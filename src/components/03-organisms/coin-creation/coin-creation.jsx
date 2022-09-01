@@ -9,12 +9,8 @@ import { useState } from 'react';
 
 const CoinCreation = () => {
 
-	const handleSubmit = (event) => {
-		event.preventDefault();
-		console.log('submit');
-	};
-
-
+	
+	
 
 	const [ formState, setFormState ] = useState({
 		logo: null,
@@ -34,11 +30,27 @@ const CoinCreation = () => {
 			sellTax3: { name: null, limit: null, address: null },
 			sellTax4: { name: null, limit: null, address: null },
 		},
-		limits: {
-			buy: null,
-			sell: null,
-		},
+		limitBuy: null,
+		limitSell: null,
 	});
+	
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		validateInputs();
+	};
+
+	const validateInputs = () => {
+		const inputs = [...document.querySelectorAll('input')];
+		const inputsToValidate = inputs.filter((input) =>  input.getAttribute('validation'))
+		inputsToValidate.map((input) => {
+			const pattern = new RegExp(input.getAttribute('validation'));
+			const value = input.value;
+			const passed = pattern.test(value);
+			passed ? input.classList.remove('field--error') : input.classList.add('field--error');
+			console.log(pattern);
+			console.log(passed);
+		});
+	};
 
 	const updateForm = ( event ) => {
 		const target = event.target;
@@ -75,14 +87,14 @@ const CoinCreation = () => {
 
 				<fieldset className="form__general general form__fieldset">
 					<InputImage className="general__input general__input--logo" id="logo" placeholder="Upload Image" onChange={ updateLogo } selectedFile={ formState.logo }  />
-					<InputText className="general__input general__input--name" id="name" label="Token Name"  placeholder="Ex: Bitcoin"value={ formState.name }  onChange={ updateForm } />
-					<InputText className="general__input general__input--symbol" id="symbol" label="Symbol"  placeholder="Ex: BTC" value={ formState.symbol } onChange={ updateForm } />
+					<InputText className="general__input general__input--name" id="name" label="Token Name"  placeholder="Ex: Bitcoin"value={ formState.name }  onChange={ updateForm } validation={ '^[a-z]{3,256}$' } />
+					<InputText className="general__input general__input--symbol" id="symbol" label="Symbol"  placeholder="Ex: BTC" value={ formState.symbol } onChange={ updateForm } validation={ '^[a-z]{3,128}$' } />
 				</fieldset>
 				
 				<fieldset className="form__supply-and-liquidity supply-and-liquidity form__fieldset">
-					<InputText className="supply-and-liquidity__input supply-and-liquidity__input--maxSupply" id="maxSupply" label="Total Supply"  placeholder="Your token maximal supply available" value={ formState.maxSupply } onChange={ updateForm } />
-					<InputText className="supply-and-liquidity__input supply-and-liquidity__input--liquidity-percentage" id="liquidityPercentage" label="Liquidity percentage"  placeholder="0-100%" value={ formState.liquidityPercentage } onChange={ updateForm }/>
-					<InputText className="supply-and-liquidity__input supply-and-liquidity__input--liquidity-eth" id="liquidityEth" label="Liquidity ETH"  placeholder="0-100%" value={ formState.liquidityEth } onChange={ updateForm }/>
+					<InputText className="supply-and-liquidity__input supply-and-liquidity__input--maxSupply" id="maxSupply" label="Total Supply"  placeholder="Your token maximal supply available" value={ formState.maxSupply } onChange={ updateForm } validation={ '^[0-9]{1,9223372036854775807}$' } />
+					<InputText className="supply-and-liquidity__input supply-and-liquidity__input--liquidity-percentage" id="liquidityPercentage" label="Liquidity percentage"  placeholder="0-100%" value={ formState.liquidityPercentage } onChange={ updateForm } validation={ '^([1-9][0-9]?|100)$' } />
+					<InputText className="supply-and-liquidity__input supply-and-liquidity__input--liquidity-eth" id="liquidityEth" label="Liquidity ETH"  placeholder="0-100%" value={ formState.liquidityEth } onChange={ updateForm } validation={ '^([1-9][0-9]?|100)$' } />
 				</fieldset>
 
 				<fieldset className="form__buy-tax buy-tax form__fieldset">
@@ -142,8 +154,8 @@ const CoinCreation = () => {
 				</fieldset>
 
 				<fieldset className="form__limits limits form__fieldset">
-					<InputText className="limits__input limits__input--buy" id="limits__input--buy" label="Limit Buy"  placeholder="Amount in %" isRequired={ false } />
-					<InputText className="limits__input limits__input--sell" id="limits__input--sell" label="Limit Sell"  placeholder="Amount in %" isRequired={ false } />
+					<InputText className="limits__input limits__input--buy" id="limitBuy" label="Limit Buy"  placeholder="Amount in %" isRequired={ false } value={ formState.limitBuy } onChange={ updateForm } validation={ '^([1-9][0-9]?|100)$' } />
+					<InputText className="limits__input limits__input--sell" id="limitSell" label="Limit Sell"  placeholder="Amount in %" isRequired={ false } value={ formState.limitBuy } onChange={ updateForm } validation={ '^([1-9][0-9]?|100)$' } />
 				</fieldset>
 
 				<fieldset className="form__actions actions form__fieldset">

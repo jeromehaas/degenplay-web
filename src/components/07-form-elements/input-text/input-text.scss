@@ -17,13 +17,17 @@
 		&--right { padding-right: 24px; }
 	}
 
-	&__field {
+	&__field, .field {
 		border: 2px solid $white;
 		outline: none;
 		padding: 12px 24px;
 		border-radius: 32px;
 		background-color: $grey-40;
 		width: 100%;
+
+		&--error {
+			border: 2px solid $red-50;
+		}
 
 		&::placeholder {
 			color: $grey-60;
