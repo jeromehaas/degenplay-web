@@ -21,7 +21,6 @@ const DesktopNavigation = () => {
                             <Link className={ `links__item anchor anchor--with-hover-effect ${ pathname === '/learn' ? 'anchor--is-active' : '' }` } to="/learn">Learn</Link>
                             <Link className={ `links__item anchor anchor--with-hover-effect ${ pathname === '/create' ? 'anchor--is-active' : '' }` } to="/create">Create</Link>
                             <Link className={ `links__item anchor anchor--with-hover-effect ${ pathname === '/explore' ? 'anchor--is-active' : '' }` } to="/explore">Explore</Link>
-                            <Link className={ `links__item anchor anchor--with-hover-effect ${ pathname === '/audit' ? 'anchor--is-active' : '' }` } to="/audit">Audit</Link>
                         </div>
                         <MetamaskStatus className="bar__button button--with-status button--with-rainbow-border" />
                     </div>

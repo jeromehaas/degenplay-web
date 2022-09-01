@@ -9,7 +9,6 @@ import { useRef, useEffect, useState } from 'react';
 const MobileNavigation = () => {
 
 	const [menuIsVisible, setMenuIsVisible] = useState(false);
-	const location = useLocation();
 	const container = useRef();
 	const hamburger = useRef();
 
@@ -72,7 +71,6 @@ const MobileNavigation = () => {
 									<Link className="links__item anchor" onClick={ handleClick }to="/learn">Learn</Link>
 									<Link className="links__item anchor" onClick={ handleClick }to="/create">Create</Link>
 									<Link className="links__item anchor" onClick={ handleClick }to="/explore">Explore</Link>
-									<Link className="links__item anchor" onClick={ handleClick }to="/audit">Audit</Link>
 								</div>	
 							</div>
 							
