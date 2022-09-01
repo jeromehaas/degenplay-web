@@ -22,17 +22,12 @@
 		}
 		
 		&__general, .general {
-			grid-template-columns: 80px 2fr 1fr 2fr;
+			grid-template-columns: 80px 2fr 1fr;
 			grid-gap: 32px;
 		}
 		
-		&__supply, .supply {
-			grid-template-columns: 1fr 1fr;
-			grid-gap: 32px;
-		}
-		
-		&__liquidity, .liquidity {
-			grid-template-columns: 1fr 1fr;
+		&__supply-and-liquidity, .supply-and-liquidity {
+			grid-template-columns: 1fr 1fr 1fr;
 			grid-gap: 32px;
 		}
 		
@@ -63,12 +58,6 @@
 		&__limits, .limits {
 			grid-template-columns: 1fr 1fr;
 			grid-gap: 32px;
-		}
-
-		&__links, .links {
-			grid-template-columns: 1fr 1fr;
-			grid-gap: 32px;
-			margin-bottom: 64px;
 		}
 
 		&__actions {

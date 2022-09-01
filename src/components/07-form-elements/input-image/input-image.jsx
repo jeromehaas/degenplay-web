@@ -1,31 +1,10 @@
-import { useState, useEffect } from 'react';
-
-const InputImage = ({ id, placeholder, className }) => {
+const InputImage = ({ id, placeholder, className, onChange, selectedFile }) => {
 	
-	const [selectedFile, setSelectedFile] = useState()
-	const [preview, setPreview] = useState()
-
-	useEffect(() => {
-		if (!selectedFile) return setPreview(undefined)
-		const objectUrl = URL.createObjectURL(selectedFile)
-		setPreview(objectUrl)
-		return () => URL.revokeObjectURL(objectUrl)
-	}, [selectedFile])
-
-	const handleChange = event => {
-		if (!event.target.files || event.target.files.length === 0) {
-				setSelectedFile(undefined);
-		} else {
-			setSelectedFile(event.target.files[0])
-		}
-
-}
-
 	return (
 		<div className={` ${ className ? className : '' } input-image`}>
-			<input className="input-image__field" id={id} type="file" onChange={ handleChange } />
-			<label className="input-image__label" htmlFor={id}>{placeholder}</label>
-			{ selectedFile &&  <img className="input-image__thumbnail" src={preview} alt="Thumbnail" /> }
+			<input className="input-image__field" id={ id } type="file" onChange={ onChange } />
+			<label className="input-image__label" htmlFor={ id }>{ placeholder }</label>
+			{ selectedFile &&  <img className="input-image__thumbnail" src={ selectedFile ? URL.createObjectURL(selectedFile) : '' } alt="Thumbnail" /> }
 		</div>
 	)
 };
