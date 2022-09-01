@@ -1,31 +1,28 @@
 import Button from "components/01-atoms/button/button";
-import { ethers } from 'ethers';
 import { useEffect, useState } from 'react';
 
 const MetamaskStatus = ({ className }) => {
 
     const [account, setAccount] = useState(null);
-		const provider = new ethers.providers.Web3Provider(window.ethereum);
 		const ethereum = window.ethereum;
-
-		console.log(ethereum);
  
 		const connectWallet = async () => {
-			const account = await ethereum.request({ method: 'eth_requestAccounts'});
+			const accounts = await ethereum.request({ method: 'eth_requestAccounts'});
+			const account = accounts[0];
 			setAccount(account);
 		};
 
+		const checkConnected = async () => {
+			const accounts = await ethereum.request({ method: 'eth_accounts'});
+			const account = accounts[0]
+			account ? setAccount(account) : setAccount(null);
+		};
+  
 		useEffect(() => {
-
-		}, [account, connectWallet])
-
-
-
-
-
-
-
-
+			checkConnected();
+			window.ethereum.on('accountsChanged', checkConnected);
+		}, []);
+		
     return (
         <Button className={`${ className ? className : ''} metamask-status`} onClick={ connectWallet }>
             { account  
