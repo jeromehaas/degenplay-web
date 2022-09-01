@@ -42,7 +42,9 @@ const CoinCreation = () => {
 
 	const updateForm = ( event ) => {
 		const target = event.target;
-		console.log(target);
+		const id = target.getAttribute('id');
+		const value = target.value;
+		setFormState({ ...formState, [id]: value  })
 	}
 
 	 const updateLogo = ( event ) => {
@@ -51,6 +53,14 @@ const CoinCreation = () => {
 			? setFormState({ ...formState, logo: target.files[0]}) 
 			: setFormState({ ...formState, logo: undefined });
 	};
+
+	const updateTaxes = ( event ) => {
+		const target = event.target;
+		const id = target.getAttribute('id');
+		const field = target.getAttribute('field');
+		const value = target.value;
+		setFormState({ ...formState, taxes: { ...formState.taxes, [id]: { ...formState.taxes[id], [field]: value } }})
+	}
 
 	return (
 		<div className="coin-creation section">
@@ -65,44 +75,41 @@ const CoinCreation = () => {
 
 				<fieldset className="form__general general form__fieldset">
 					<InputImage className="general__input general__input--logo" id="logo" placeholder="Upload Image" onChange={ updateLogo } selectedFile={ formState.logo }  />
-					<InputText className="general__input general__input--name" id="name" label="Token Name"  placeholder="Ex: Bitcoin" validation={ '^.{6,7}$' } />
-					<InputText className="general__input general__input--symbol" id="symbol" label="Symbol"  placeholder="Ex: BTC" />
+					<InputText className="general__input general__input--name" id="name" label="Token Name"  placeholder="Ex: Bitcoin"value={ formState.name }  onChange={ updateForm } />
+					<InputText className="general__input general__input--symbol" id="symbol" label="Symbol"  placeholder="Ex: BTC" value={ formState.symbol } onChange={ updateForm } />
 				</fieldset>
 				
-				<fieldset className="form__supply supply form__fieldset">
-				</fieldset>
-
 				<fieldset className="form__supply-and-liquidity supply-and-liquidity form__fieldset">
-					<InputText className="supply-and-liquidity__input supply-and-liquidity__input--max-supply" id="max-supply" label="Total Supply"  placeholder="Your token maximal supply available" />
-					<InputText className="supply-and-liquidity__input supply-and-liquidity__input--liquidity-percentage" id="liquidity-percentage" label="Liquidity percentage"  placeholder="0-100%" />
-					<InputText className="supply-and-liquidity__input supply-and-liquidity__input--liquidity-eth" id="liquidity-eth" label="Liquidity ETH"  placeholder="0-100%" />
+					<InputText className="supply-and-liquidity__input supply-and-liquidity__input--maxSupply" id="maxSupply" label="Total Supply"  placeholder="Your token maximal supply available" value={ formState.maxSupply } onChange={ updateForm } />
+					<InputText className="supply-and-liquidity__input supply-and-liquidity__input--liquidity-percentage" id="liquidityPercentage" label="Liquidity percentage"  placeholder="0-100%" value={ formState.liquidityPercentage } onChange={ updateForm }/>
+					<InputText className="supply-and-liquidity__input supply-and-liquidity__input--liquidity-eth" id="liquidityEth" label="Liquidity ETH"  placeholder="0-100%" value={ formState.liquidityEth } onChange={ updateForm }/>
 				</fieldset>
 
 				<fieldset className="form__buy-tax buy-tax form__fieldset">
 					<Text className="buy-tax__header">Set buy tax amount (%)</Text>
 					<span className="buy-tax__wrapper">
 						<Text className="buy-tax__label">Tax 1</Text>
-						<InputText className="buy-tax__input buy-tax__input--name-1" id="buy-tax-name-1" label=""  placeholder="Tax name" />
-						<InputText className="buy-tax__input buy-tax__input--name-1" id="buy-tax-limit-1" label=""  placeholder="Amount in %" />
-						<InputText className="buy-tax__input buy-tax__input--name-1" id="buy-tax-address-1" label=""  placeholder="Wallet tax 1" />
+						<InputText className="buy-tax__input buy-tax__input--name-1" id="buyTax1" field="name" label=""  placeholder="Tax name"  value={ formState.taxes.buyTax1.name} onChange={ updateTaxes } />
+						<InputText className="buy-tax__input buy-tax__input--limit-1" id="buyTax1" field="limit" label=""  placeholder="Amount in %"  value={ formState.taxes.buyTax1.limit} onChange={ updateTaxes } />
+						<InputText className="buy-tax__input buy-tax__input--address-1" id="buyTax1" field="address" label=""  placeholder="Wallet tax 1"  value={ formState.taxes.buyTax1.address} onChange={ updateTaxes } />
 					</span>
 					<span className="buy-tax__wrapper">
 						<Text className="buy-tax__label">Tax 2</Text>
-						<InputText className="buy-tax__input buy-tax__input--name-2" id="buy-tax-name-2" label=""  placeholder="Tax name" />
-						<InputText className="buy-tax__input buy-tax__input--name-2" id="buy-tax-limit-2" label=""  placeholder="Amount in %" />
-						<InputText className="buy-tax__input buy-tax__input--name-2" id="buy-tax-address-2" label=""  placeholder="Wallet tax 2" />
+						<InputText className="buy-tax__input buy-tax__input--name-2" id="buyTax2" label="" field="name"  placeholder="Tax name"  value={ formState.taxes.buyTax2.name } onChange={ updateTaxes } />
+						<InputText className="buy-tax__input buy-tax__input--limit-2" id="buyTax2" label="" field="limit" placeholder="Amount in %"  value={ formState.taxes.buyTax2.limit } onChange={ updateTaxes } />
+						<InputText className="buy-tax__input buy-tax__input--address-2" id="buyTax2" label="" field="address" placeholder="Wallet tax 2"  value={ formState.taxes.buyTax2.address } onChange={ updateTaxes } />
 					</span>
 					<span className="buy-tax__wrapper">
 						<Text className="buy-tax__label">Tax 3</Text>
-						<InputText className="buy-tax__input buy-tax__input--name-3" id="buy-tax-name-3" label=""  placeholder="Tax name" />
-						<InputText className="buy-tax__input buy-tax__input--name-3" id="buy-tax-limit-3" label=""  placeholder="Amount in %" />
-						<InputText className="buy-tax__input buy-tax__input--name-3" id="buy-tax-address-3" label=""  placeholder="Wallet tax 3" />
+						<InputText className="buy-tax__input buy-tax__input--name-3" id="buyTax3" label="" field="name"  placeholder="Tax name"  value={ formState.taxes.buyTax3.name } onChange={ updateTaxes } />
+						<InputText className="buy-tax__input buy-tax__input--limit-3" id="buyTax3" label="" field="limit" placeholder="Amount in %"  value={ formState.taxes.buyTax3.limit } onChange={ updateTaxes } />
+						<InputText className="buy-tax__input buy-tax__input--address-3" id="buyTax3" label="" field="address" placeholder="Wallet tax 3"  value={ formState.taxes.buyTax3.address } onChange={ updateTaxes } />
 					</span>
 					<span className="buy-tax__wrapper">
 						<Text className="buy-tax__label">Tax 4</Text>
-						<InputText className="buy-tax__input buy-tax__input--name-4" id="buy-tax-name-4" label=""  placeholder="Tax name" />
-						<InputText className="buy-tax__input buy-tax__input--name-4" id="buy-tax-limit-4" label=""  placeholder="Amount in %" />
-						<InputText className="buy-tax__input buy-tax__input--name-4" id="buy-tax-address-4" label=""  placeholder="Wallet tax 4" />
+						<InputText className="buy-tax__input buy-tax__input--name-4" id="buyTax4" label="" field="name"  placeholder="Tax name"  value={ formState.taxes.buyTax4.name } onChange={ updateTaxes } />
+						<InputText className="buy-tax__input buy-tax__input--limit-4" id="buyTax4" label="" field="limit" placeholder="Amount in %"  value={ formState.taxes.buyTax4.limit } onChange={ updateTaxes } />
+						<InputText className="buy-tax__input buy-tax__input--address-4" id="buyTax4" label="" field="address" placeholder="Wallet tax 4"  value={ formState.taxes.buyTax4.address } onChange={ updateTaxes } />
 					</span>
 				</fieldset>
 
@@ -110,27 +117,27 @@ const CoinCreation = () => {
 					<Text className="buy-tax__header">Set sell tax amount (%)</Text>
 					<span className="sell-tax__wrapper">
 						<Text className="sell-tax__label">Tax 1</Text>
-						<InputText className="sell-tax__input sell-tax__input--name-1" id="sell-tax-name-1" label=""  placeholder="Tax name"  />
-						<InputText className="sell-tax__input sell-tax__input--name-1" id="sell-tax__input--name-1" label=""  placeholder="Amount in %" />
-						<InputText className="sell-tax__input sell-tax__input--name-1" id="sell-tax__input--name-1" label=""  placeholder="Wallet tax 1" />
+						<InputText className="sell-tax__input sell-tax__input--name-1" id="sellTax1" label="" field="name" placeholder="Tax name"  value={ formState.taxes.sellTax1.name } onChange={ updateTaxes } />
+						<InputText className="sell-tax__input sell-tax__input--name-1" id="sellTax1" label="" field="limit"  placeholder="Amount in %" value={ formState.taxes.sellTax1.limit } onChange={ updateTaxes } />
+						<InputText className="sell-tax__input sell-tax__input--name-1" id="sellTax1" label="" field="address" placeholder="Wallet tax 1" value={ formState.taxes.sellTax1.address } onChange={ updateTaxes } />
 					</span>	
 					<span className="sell-tax__wrapper">
 						<Text className="sell-tax__label">Tax 2</Text>
-						<InputText className="sell-tax__input sell-tax__input--name-2" id="sell-tax-name-2" label=""  placeholder="Tax name" />
-						<InputText className="sell-tax__input sell-tax__input--name-2" id="sell-tax-name-2" label=""  placeholder="Amount in %" />
-						<InputText className="sell-tax__input sell-tax__input--name-2" id="sell-tax-name-2" label=""  placeholder="Wallet tax 2" />
+						<InputText className="sell-tax__input sell-tax__input--name-2" id="sellTax2" label="" field="name"  placeholder="Tax name" value={ formState.taxes.sellTax1.name } onChange={ updateTaxes } />
+						<InputText className="sell-tax__input sell-tax__input--name-2" id="sellTax2" label="" field="limit"  placeholder="Amount in %" value={ formState.taxes.sellTax1.limit } onChange={ updateTaxes } />
+						<InputText className="sell-tax__input sell-tax__input--name-2" id="sellTax2" label="" field="address" placeholder="Wallet tax 2" value={ formState.taxes.sellTax1.address } onChange={ updateTaxes } />
 					</span>	
 					<span className="sell-tax__wrapper">
 						<Text className="sell-tax__label">Tax 3</Text>
-						<InputText className="sell-tax__input sell-tax__input--name-3" id="sell-tax-name-3" label=""  placeholder="Tax name" />
-						<InputText className="sell-tax__input sell-tax__input--name-3" id="sell-tax-name-3" label=""  placeholder="Amount in %" />
-						<InputText className="sell-tax__input sell-tax__input--name-3" id="sell-tax-name-3" label=""  placeholder="Wallet tax 3" />
+						<InputText className="sell-tax__input sell-tax__input--name-3" id="sellTax3" label="" field="name"  placeholder="Tax name" value={ formState.taxes.sellTax1.name } onChange={ updateTaxes } />
+						<InputText className="sell-tax__input sell-tax__input--name-3" id="sellTax3" label="" field="limit"  placeholder="Amount in %" value={ formState.taxes.sellTax1.limit } onChange={ updateTaxes } />
+						<InputText className="sell-tax__input sell-tax__input--name-3" id="sellTax3" label="" field="address" placeholder="Wallet tax 3" value={ formState.taxes.sellTax1.address } onChange={ updateTaxes } />
 					</span>	
 					<span className="sell-tax__wrapper">
 						<Text className="sell-tax__label">Tax 4</Text>
-						<InputText className="sell-tax__input sell-tax__input--name-4" id="sell-tax-name-4" label=""  placeholder="Tax name" />
-						<InputText className="sell-tax__input sell-tax__input--name-4" id="sell-tax-name-4" label=""  placeholder="Amount in %" />
-						<InputText className="sell-tax__input sell-tax__input--name-4" id="sell-tax-name-4" label=""  placeholder="Wallet tax 4" />
+						<InputText className="sell-tax__input sell-tax__input--name-4" id="sellTax4" label="" field="name"  placeholder="Tax name" value={ formState.taxes.sellTax1.name } onChange={ updateTaxes } />
+						<InputText className="sell-tax__input sell-tax__input--name-4" id="sellTax4" label="" field="limit"  placeholder="Amount in %" value={ formState.taxes.sellTax1.limit } onChange={ updateTaxes } />
+						<InputText className="sell-tax__input sell-tax__input--name-4" id="sellTax4" label="" field="address" placeholder="Wallet tax 4" value={ formState.taxes.sellTax1.address } onChange={ updateTaxes } />
 					</span>	
 				</fieldset>
 

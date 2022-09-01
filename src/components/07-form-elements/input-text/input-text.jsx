@@ -1,4 +1,4 @@
-const InputText = ({ className, label, placeholder, id, isRequired }) => {
+const InputText = ({ className, label, placeholder, id, isRequired, onChange, field }) => {
 
 	return (
 		<div className={` ${className ? className : '' } input-text `}>
@@ -7,7 +7,7 @@ const InputText = ({ className, label, placeholder, id, isRequired }) => {
 				<span className="input-text__label input-text__label--left">{ label }</span> 
 				{ isRequired === false &&	<span className="input-text__label input-text__label--right">(optional)</span> }
 			</label> }
-			<input className={`${className ? className : '' } input-text__field`} type="text" placeholder={ placeholder } id={ id } />
+			<input className={`${className ? className : '' } input-text__field`} type="text" placeholder={ placeholder } id={ id } onChange={ onChange } field={ field ? field : '' } />
 		</div>
 	);
 
