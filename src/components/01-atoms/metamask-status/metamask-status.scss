@@ -1,0 +1,17 @@
+@import 'styles/variables.scss';
+
+.metamask-status {
+	
+	.button__status {
+		color: $grey-40 !important;
+	}
+
+	&--connected {
+
+		.button__status {
+			color: $green-50 !important;
+		}
+
+	}
+
+}

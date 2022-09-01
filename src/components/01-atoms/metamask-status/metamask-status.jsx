@@ -24,7 +24,7 @@ const MetamaskStatus = ({ className }) => {
 		}, []);
 		
     return (
-        <Button className={`${ className ? className : ''} metamask-status`} onClick={ connectWallet }>
+        <Button className={`${ className ? className : ''} ${ account ? 'metamask-status--connected' : '' } metamask-status button--with-status button--with-rainbow-border`} onClick={ connectWallet }>
             { account  
             ? 'Connected'
             : 'Not Connected' }

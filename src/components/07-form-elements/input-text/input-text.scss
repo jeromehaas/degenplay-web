@@ -1,6 +1,6 @@
 @import 'styles/variables.scss';
 
-.input-text {
+.input-text, .input-element {
 	width: 100%;
 
 	&__label-wrapper {
@@ -25,10 +25,6 @@
 		background-color: $grey-40;
 		width: 100%;
 
-		&--error {
-			border: 2px solid $red-50;
-		}
-
 		&::placeholder {
 			color: $grey-60;
 		}
@@ -37,6 +33,27 @@
 		&:focus {
 			border: 2px solid $orange-50;
 		}
+
+	}
+
+	&__error-text {
+		color: red;
+		font-size: 12px;
+		padding: 0 24px;
+		display: none;
+		margin-top: 4px;
+	}
+
+	&--error {
+		
+		.input-text__field {
+			 border: 2px solid $red-50;
+		}
+
+		.input-text__error-text {
+			display: block;
+		}
+	
 	}
 
 }

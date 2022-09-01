@@ -2,9 +2,9 @@ import Logo from "components/01-atoms/logo/logo";
 import { Link, useLocation } from 'react-router-dom';
 import Button from 'components/01-atoms/button/button';
 import { Player } from '@lottiefiles/react-lottie-player';
-// import Lottie from '/lotties/hamburger.json';
 import Lottie from 'lottie-web';
 import { useRef, useEffect, useState } from 'react';
+import MetamaskStatus from "components/01-atoms/metamask-status/metamask-status";
 
 const MobileNavigation = () => {
 
@@ -59,7 +59,7 @@ const MobileNavigation = () => {
 												<Logo className="bar__logo" />
 											</Link>
 											<div className="bar__hamburger" ref={ container } onClick={ handleClick }></div>
-											<Button className="bar__button button--with-status button--with-rainbow-border">Wallet</Button>
+                        <MetamaskStatus className="bar__button " />
 									</div>
 							</div>
 
