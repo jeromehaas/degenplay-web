@@ -32,7 +32,6 @@
 			height: 56px;
 		}
 
-        &__button {}
 
         &__links {
             display: flex;
@@ -43,29 +42,29 @@
     }
 
 	&__menu, .menu {
-		background-color: $black;
+		background-color: transparentize($black, 1);
 		position: fixed;
-		top: calc(80px + 64px - 48px);
+		top: 144px;
 		right: 0;
 		bottom: 0;
 		left: 0;
 		z-index: 15;
-		transition: all 0.3s ease;
-		height: 48px;
+		transition: background-color 0.3s ease;  
+		height: 0px;
 
 		&__links, .links {
 			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
-			align-items: center;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
 			height: 100%;
-			padding: 0 32px;
-			border-bottom: 1px solid $white;
+			padding: 16px 32px;
 
 			&__item {
 				color: $white !important;
 				opacity: 0;
 				transition: all 0.3s ease;
+				margin-bottom: 16px;
 			}
 
 		}
@@ -89,7 +88,8 @@
 			.mobile-navigation {
 
 				&__menu, .menu {
-					top: calc(80px + 64px);
+					height: calc(100vh - (80px + 64px - 48px));
+					background-color: transparentize($black, 0.1);
 
 					&__links, .links {
 
@@ -124,6 +124,7 @@
 
 				&__hamburger {
 					order: 1;
+					right: 8px !important;
 				}
 
 
@@ -159,13 +160,13 @@
   			}
 
 			& .mobile-navigation__menu, .menu {
-				top: calc(120px + 64px - 48px);
+				top: 120px;
 			}
 			
 			&--menu-is-visible  {
 
 				.mobile-navigation__menu, .menu {
-					top: calc(120px + 64px);
+					top: 200px;
 				}
 				
 			}
@@ -220,7 +221,7 @@
 
 		}
 
-		@media (max-width: 360px) {
+		@media (max-width: 450px) {
 
 			&__bar, .bar {
 			
