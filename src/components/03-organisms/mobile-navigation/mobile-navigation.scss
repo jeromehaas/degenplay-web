@@ -108,6 +108,34 @@
 			display: block;
 		}
 
+		@media (max-width: 650px) {
+
+
+			&__bar, .bar {
+
+				&__inner {
+					justify-content: start;
+					gap: 16px;
+				}
+
+				&__logo-wrapper {
+					order: 2;
+				}
+
+				&__hamburger {
+					order: 1;
+				}
+
+
+				&__button {
+					order: 3;
+					margin-left: auto;
+				}
+
+			}
+
+		}
+
 		@media (max-width: 500px) {
 
 			&__bar, .bar {
@@ -120,10 +148,6 @@
 					right: -8px;
 				}
 
-				&__button {
-					display: none;
-				}
-	
 			}
 
 			&__cover {
@@ -191,6 +215,20 @@
 				}
 			}
 
+		}
+
+		@media (max-width: 360px) {
+
+			&__bar, .bar {
+			
+				&__inner {
+					justify-content: space-between;;
+				}
+
+				&__button {
+					display: none;
+				}
+			}
 		}
 
 }
