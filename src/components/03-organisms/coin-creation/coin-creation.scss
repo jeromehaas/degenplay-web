@@ -80,28 +80,22 @@
 			}
 
 			&__general, .general {
-				grid-template-columns: 72px 72px 1fr 1fr 1fr;
-				grid-template-rows: 72spx 72px auto;
+				grid-template-columns: 72px 72px 1fr;
+				grid-template-rows: 72px 72px;
 				grid-gap: 16px;
 
-				&__input--image { grid-column: 1 / 3; grid-row: 1 / 2 }
-				&__input--name { grid-column:  3 / 6; grid-row: 1 / 2 }
-				&__input--chain { grid-column: 3 / 4; grid-row: 2 / 3 }
-				&__input--symbol { grid-column: 4 / 6; grid-row: 2 / 3 }
 
-				&__input--image { width: 144px; height: 144px; }
+				&__input--logo { grid-column: 1 / 3; grid-row: 1 / 2 }
+				&__input--name { grid-column:  3 / 6; grid-row: 1 / 2 }
+				&__input--symbol { grid-column: 3 / 6; grid-row: 2 / 3 }
+
+				&__input--logo { width: 144px; height: 144px; }
 
 			}
 			
-				&__supply, .supply {
+				&__supply-and-liquidity, 
+				.supply-and-liquidity {
 					grid-template-columns: 1fr;
-					grid-template-rows: auto;
-					grid-gap: 16px;
-				}
-			
-				&__liquidity, .liquidity {
-					grid-template-columns: 1fr;
-					grid-template-rows: auto;
 					grid-gap: 16px;
 					margin-bottom: 48px;
 				}
@@ -185,7 +179,7 @@
 				&__input--chain { grid-column: 1 / 2; grid-row: 3 / 4 }
 				&__input--symbol { grid-column: 1 / 2; grid-row: 4 / 5 }
 
-				&__input--image { 
+				&__input--logo { 
 					width: 120px; height: 120px;
 					align-self: center;
 					justify-self: center;

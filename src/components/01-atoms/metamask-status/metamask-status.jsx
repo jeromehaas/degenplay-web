@@ -7,24 +7,27 @@ const MetamaskStatus = ({ className }) => {
 		const ethereum = window.ethereum;
  
 		const connectWallet = async () => {
+			if (!ethereum) return;
 			const accounts = await ethereum.request({ method: 'eth_requestAccounts'});
 			const account = accounts[0];
 			setAccount(account);
 		};
 
 		const checkConnected = async () => {
+			if (!ethereum) return;
 			const accounts = await ethereum.request({ method: 'eth_accounts'});
 			const account = accounts[0]
 			account ? setAccount(account) : setAccount(null);
 		};
   
 		useEffect(() => {
+			if (!ethereum) return;
 			checkConnected();
 			window.ethereum.on('accountsChanged', checkConnected);
 		}, []);
 		
     return (
-        <Button className={`${ className ? className : ''} metamask-status`} onClick={ connectWallet }>
+        <Button className={`${ className ? className : ''} ${ account ? 'metamask-status--connected' : '' } metamask-status button--with-status button--with-rainbow-border`} onClick={ connectWallet }>
             { account  
             ? 'Connected'
             : 'Not Connected' }

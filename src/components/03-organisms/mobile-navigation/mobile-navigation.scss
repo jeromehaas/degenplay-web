@@ -10,9 +10,9 @@
         right: 0;
         left: 0;
         height: 64px;
-		margin-bottom: 0;
-		z-index: 20;
-		background-color: $white;
+				margin-bottom: 0;
+				z-index: 20;
+				background-color: $white;
 				
         &__inner {
             width: 100%;
@@ -195,7 +195,7 @@
 			}
 
 			&__menu, .menu {
-				height: 180px;
+				height: 148px;
 
 				&__links, .links {
 					flex-direction: column;
@@ -211,8 +211,11 @@
 						&:last-child {
 							border-bottom: 0;
 						}
+
 					}
+
 				}
+
 			}
 
 		}
