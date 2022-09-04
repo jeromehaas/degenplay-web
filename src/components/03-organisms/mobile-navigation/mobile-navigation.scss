@@ -195,29 +195,7 @@
 				
 			}
 
-			&__menu, .menu {
-				height: 148px;
 
-				&__links, .links {
-					flex-direction: column;
-					padding: 0;
-					gap: 0;
-
-					&__item {
-						width: 100%;
-						border-bottom: 1px solid white;
-						text-align: center;
-						padding: 8px 24px;
-
-						&:last-child {
-							border-bottom: 0;
-						}
-
-					}
-
-				}
-
-			}
 
 		}
 
