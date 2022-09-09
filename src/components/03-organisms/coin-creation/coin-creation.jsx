@@ -7,8 +7,12 @@ import InputSlider from "components/07-form-elements/input-slider/input-slider";
 import Button from "components/01-atoms/button/button";
 import Anchor from "components/01-atoms/anchor/anchor";
 import { useState } from 'react';
+import { useSelector, useDispatch } from "react-redux";
+import { connect } from 'redux/metamask/slice';
 
 const CoinCreation = () => {
+
+	const metamask = useSelector((state) => state.metamask);
 
 	const [ formState, setFormState ] = useState({
 		logo: null,
@@ -50,7 +54,7 @@ const CoinCreation = () => {
 		});
 	};
 
-	const updateForm = ( event ) => {
+	const updateText = ( event ) => {
 		const target = event.target;
 		const id = target.getAttribute('id');
 		const value = target.value;
@@ -63,7 +67,7 @@ const CoinCreation = () => {
 			? setFormState({ ...formState, logo: target.files[0]}) 
 			: setFormState({ ...formState, logo: undefined });
 	};
-
+	
 	const updateSlider = ( event ) => {
 		const target = event.target;
 		const id = target.getAttribute('id');
@@ -98,6 +102,7 @@ const CoinCreation = () => {
 			<div className="coin-creation__inner section__inner">
 				
 				<div className="coin-creation__header header">
+					{ metamask.address }
       				<Heading className="header__title" level="h1">How to create your <Rainbow>meme coins</Rainbow>in 6 steps</Heading>
       				<Text className="header__text">Enter details of your token and easily deploy in minutes.</Text>
       			</div>
@@ -116,8 +121,8 @@ const CoinCreation = () => {
 						</div>
 						<div className="fieldset__inputs inputs">
 							<InputImage className="inputs__item inputs__item--logo" id="logo" placeholder="Upload Image" onChange={ updateImage } selectedFile={ formState.logo }  />
-							<InputText className="inputs__item inputs__item--name" id="name" label="Token Name"  placeholder="Ex: Bitcoin"value={ formState.name }  onChange={ updateForm } isRequired={ true } validation={ '^[a-z]{3,256}$' } errorText="Enter a name from 3 to 256 characters" />
-							<InputText className="inputs__item inputs__item--symbol" id="symbol" label="Symbol"  placeholder="Ex: BTC" value={ formState.symbol } onChange={ updateForm } isRequired={ true } validation={ '^[a-z]{3,128}$' } errorText="Enter a symbol from 3 to 128 characters" />
+							<InputText className="inputs__item inputs__item--name" id="name" label="Token Name"  placeholder="Ex: Bitcoin"value={ formState.name }  onChange={ updateText } isRequired={ true } validation={ '^[a-z]{3,256}$' } errorText="Enter a name from 3 to 256 characters" />
+							<InputText className="inputs__item inputs__item--symbol" id="symbol" label="Symbol"  placeholder="Ex: BTC" value={ formState.symbol } onChange={ updateText } isRequired={ true } validation={ '^[a-z]{3,128}$' } errorText="Enter a symbol from 3 to 128 characters" />
 						</div>
 						<div className="fieldset__manuals manuals">
 							<Text className="manuals__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a diam ultrices. Fllamcorper purus non, tristique mi. Donec at mi scelerisque, imperdiet est eget, porttitor libero. Pellentesque imperdiet euismod ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a diam ultrices, ullamcorper purus non, tristique mi. Donec at mi scelerisque, imperdiet est eget, porttitor libero. Pellentesque imperdiet euismod ex.</Text>
@@ -135,7 +140,7 @@ const CoinCreation = () => {
 							<Heading className="heading__subtitle" level="h3">Create your <Rainbow>logo</Rainbow> and <Rainbow>name</Rainbow>for your coin</Heading>
 						</div>
 						<div className="fieldset__inputs inputs">
-							<InputSlider className="inputs__item inputs__item--max-supply" label="Total Supply" id="maxSupply" onChange={ updateSlider } isRequired={ true } value={ formState.maxSupply } min={ 0 } max={ 100 } validation={ '^([1-9][0-9]?|100)$' } errorText="Enter a number from 0 to 100" />
+							<InputSlider className="inputs__item inputs__item--max-supply" label="Total Supply" id="maxSupply" onChange={ updateSlider } isRequired={ true } value={ formState.maxSupply } min={ 0 } max={ metamask.balance } validation={ '^([1-9][0-9]?|100)$' } errorText="Enter a number from 0 to 100" />
 							<InputSlider className="inputs__item inputs__item--liquidity-percentage" label="Liquidity percentage" id="liquidityPercentage" onChange={ updateSlider } isRequired={ true } value={ formState.liquidityPercentage } valueAppendix="%" min={ 0 } max={ 100 } validation={ '^([1-9][0-9]?|100)$' } errorText="Enter a number from 0 to 100" />
 							<InputSlider className="inputs__item inputs__item--liquidity-eth" label="Liquidity ETH" id="liquidityEth" onChange={ updateSlider } isRequired={ true } value={ formState.liquidityEth } valueAppendix="%" min={ 0 } max={ 100 } validation={ '^([1-9][0-9]?|100)$' } errorText="Enter a number from 0 to 100" />
 						</div>
@@ -225,8 +230,6 @@ const CoinCreation = () => {
 							<Text className="manuals__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a diam ultrices. Fllamcorper purus non, tristique mi. Donec at mi scelerisque, imperdiet est eget, porttitor libero. Pellentesque imperdiet euismod ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a diam ultrices, ullamcorper purus non, tristique mi. Donec at mi scelerisque, imperdiet est eget, porttitor libero. Pellentesque imperdiet euismod ex.</Text>
 						</div>
 					</fieldset>
-
-
 
 					<fieldset className="form__fieldset fieldset form__fieldset--limits">
 						<div className="fieldset__index index">

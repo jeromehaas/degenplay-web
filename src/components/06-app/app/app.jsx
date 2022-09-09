@@ -1,15 +1,16 @@
 import Page from 'components/04-layouts/page/page';
-import { AppProvider } from 'context/app-context';
+import { store } from 'redux/store';
+import { Provider } from 'react-redux';
 
 const App = ({ children }) => {
 
 
 	return (
-		<AppProvider>
+		<Provider store={ store }>
 			<Page>
 				{ children }
 			</Page>
-		</AppProvider>
+		</Provider>
 	);
 
 };
