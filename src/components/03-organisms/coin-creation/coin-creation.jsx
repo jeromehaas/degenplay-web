@@ -102,7 +102,6 @@ const CoinCreation = () => {
 			<div className="coin-creation__inner section__inner">
 				
 				<div className="coin-creation__header header">
-					{ metamask.address }
       				<Heading className="header__title" level="h1">How to create your <Rainbow>meme coins</Rainbow>in 6 steps</Heading>
       				<Text className="header__text">Enter details of your token and easily deploy in minutes.</Text>
       			</div>
