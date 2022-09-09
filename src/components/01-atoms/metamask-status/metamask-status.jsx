@@ -14,7 +14,7 @@ const MetamaskStatus = ({ className }) => {
 		const connectWallet = async () => {
 			if (!ethereum) return;
 			const accounts = await ethereum.request({ method: 'eth_requestAccounts'});
-			if (accounts) {
+			if (accounts[0]) {
 				const address = accounts[0]
 				const balanceHex = await ethereum.request({ method: 'eth_getBalance', params: [ address, 'latest' ]});
 				const balance = parseInt(balanceHex, 16);
@@ -27,7 +27,7 @@ const MetamaskStatus = ({ className }) => {
 		const checkConnected = async () => {
 			if (!ethereum) return;
 			const accounts = await ethereum.request({ method: 'eth_accounts'});
-			if (accounts) {
+			if (accounts[0]) {
 				const address = accounts[0]
 				const balanceHex = await ethereum.request({ method: 'eth_getBalance', params: [ address, 'latest' ]});
 				const balance = parseInt(balanceHex, 16);
