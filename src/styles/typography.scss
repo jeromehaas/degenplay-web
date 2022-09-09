@@ -18,15 +18,15 @@
 
 	&--h3 { 
 		font-size: 22px;
-		line-height: 1.2px;
+		line-height: 1.2;
 		font-weight: 600;
-		text-transform: uppercase;
+		// text-transform: uppercase;
 	}
 
 
 	&--h4 { 
 		font-size: 18px;
-		line-height: 1.2px;
+		line-height: 1.2;
 		font-weight: 600;
 	}
 
@@ -109,6 +109,15 @@
 	font-size: 32px;
 }
 
+.coin-creation .index__number {
+	font-size: 120px;
+	font-weight: 600;
+}
+
+.coin-creation .index__done {
+	font-weight: 600;
+}
+
 @media (max-width: 1000px) {
 
 	.heading {
@@ -164,4 +173,15 @@
 		font-size: 20px;
 	}
 		
+}
+
+@media (max-width: 400px) {
+
+	.coin-creation .index__number {
+		font-size: 56px;
+	}
+
+	.coin-creation .index__done {
+		font-size: 10px;
+	}
 }

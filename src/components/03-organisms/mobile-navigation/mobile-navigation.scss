@@ -10,9 +10,9 @@
         right: 0;
         left: 0;
         height: 64px;
-				margin-bottom: 0;
-				z-index: 20;
-				background-color: $white;
+		margin-bottom: 0;
+		z-index: 20;
+		background-color: $white;
 				
         &__inner {
             width: 100%;
@@ -166,7 +166,7 @@
 			&--menu-is-visible  {
 
 				.mobile-navigation__menu, .menu {
-					top: 200px;
+					top: 185px;
 				}
 				
 			}
@@ -195,8 +195,6 @@
 				
 			}
 
-
-
 		}
 
 		@media (max-width: 450px) {
@@ -210,7 +208,9 @@
 				&__button {
 					display: none;
 				}
+
 			}
+
 		}
 
 }
