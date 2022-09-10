@@ -9,10 +9,12 @@ import Anchor from "components/01-atoms/anchor/anchor";
 import { useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { connect } from 'redux/metamask/slice';
+import { show, hide } from 'redux/notifier/slice';
 
 const CoinCreation = () => {
 
 	const metamask = useSelector((state) => state.metamask);
+	const dispatch = useDispatch();
 
 	const [ formState, setFormState ] = useState({
 		logo: null,
@@ -38,20 +40,33 @@ const CoinCreation = () => {
 	
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		validateInputs();
+		const errors = validateInputs();
+		if (errors.length === 0) {
+			dispatch(show({ heading: 'Your coin was successfully created!', text: 'Your coin is on the way!' }));
+			resetInputs();
+		};
+	};
+
+	const resetInputs = () => {
+		 const form = document.querySelector('.coin-creation__form');
+		 form.reset();
 	};
 
 	const validateInputs = () => {
 		const inputs = [...document.querySelectorAll('input')];
 		const inputsToValidate = inputs.filter((input) =>  input.getAttribute('validation'))
+		const errors = [];
 		inputsToValidate.forEach((input) => {
 			const element = input.closest('.input-element');
 			const pattern = new RegExp(input.getAttribute('validation'));
+			const id = new RegExp(input.getAttribute('id'));
 			const isRequired = input.getAttribute('is-required');
 			const value = input.value;
 			if (isRequired === '0' && value === '') return element.classList.remove('input-element--error');
+			if (pattern.test(value) === false) errors.push(id);
 			pattern.test(value) ? element.classList.remove('input-element--error') : element.classList.add('input-element--error');
 		});
+		return errors;
 	};
 
 	const updateText = ( event ) => {
