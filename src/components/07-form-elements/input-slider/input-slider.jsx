@@ -1,7 +1,4 @@
-import { useRef, useEffect } from 'react';
-
 const InputSlider = ({ className, label, id, isRequired, onChange, value, min, max, field, valueAppendix }) => {
-
 
     return (
      <div className={` ${className ? className : '' } input-slider`}>
@@ -10,7 +7,7 @@ const InputSlider = ({ className, label, id, isRequired, onChange, value, min, m
            { isRequired === false && <p className="input-slider__label input-slider__label--right">(optional)</p>}
         </span> }
         <input className="input-slider__field" min={ min } max={ max } value={ value } id={ id } field={ field } type="range"  step="0.1" onChange={ onChange } />
-        <p className="input-slider__value">{ value }{ valueAppendix ? valueAppendix : ''}</p>
+        <p className="input-slider__value">{ value } { valueAppendix ? valueAppendix : ''}</p>
      </div>
     );
 

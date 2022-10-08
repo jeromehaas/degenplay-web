@@ -12,7 +12,6 @@
 
 	}
 
-
 	&__form, .form {
 
 		&__fieldset, .fieldset {
@@ -110,27 +109,20 @@
 
 			}
 
-			&--buy-tax {
+			&--taxes {
+
+				& .inputs {
+					grid-gap: 16px !important;
+				}
 				
 				& .inputs__wrapper {
 					display: grid;
 					align-items: center;
 					grid-gap: 16px;
-					grid-template-columns: 48px 2fr 1fr 2fr;
+					grid-template-columns:  auto 96px 96px;
 				}
 
 			}
-
-			&--sell-tax {
-				
-				& .inputs__wrapper {
-					display: grid;
-					align-items: center;
-					grid-gap: 16px;
-					grid-template-columns: 48px 2fr 1fr 2fr;
-				}
-
-			}	
 
 			&--limits {
 
