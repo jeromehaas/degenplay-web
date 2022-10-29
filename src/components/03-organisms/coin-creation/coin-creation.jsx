@@ -22,7 +22,7 @@ const CoinCreation = () => {
 		symbol: null,
 		maxSupply: 0,
 		liquidityPercentage: 0,
-		liquidityEth: 0,
+		liquidityDuration: 0,
 		wallet: null,
 		taxes: [
 			{ address: null, buy: 0, sell: 0 },
@@ -84,7 +84,6 @@ const CoinCreation = () => {
 			const element = input.closest('.input-element');
 			const id = input.getAttribute('id');
 			element.classList.add('input-element--error');
-			console.log(element)
 			errors.push(id);
 		});
 		const errorInfo = document.querySelector('.form__fieldset--taxes .error-info');
@@ -175,8 +174,8 @@ const CoinCreation = () => {
 						</div>
 						<div className="fieldset__inputs inputs">
 							<InputSlider className="inputs__item inputs__item--max-supply" label="Total Supply" id="maxSupply" onChange={ updateSlider } isRequired={ true } value={ formState.maxSupply } min={ 0 } max={ metamask.balanceInEth  } step="0.000000000001" validation={ '^([1-9][0-9]?|100)$' } valueAppendix="ETH" errorText="Enter a number from 0 to 100" />
-							<InputSlider className="inputs__item inputs__item--liquidity-percentage" label="Liquidity percentage" id="liquidityPercentage" onChange={ updateSlider } isRequired={ true } value={ formState.liquidityPercentage } valueAppendix="%" min={ 0 } max={ 100 } validation={ '^([1-9][0-9]?|100)$' } errorText="Enter a number from 0 to 100" />
-							<InputSlider className="inputs__item inputs__item--liquidity-eth" label="Liquidity ETH" id="liquidityEth" onChange={ updateSlider } isRequired={ true } value={ formState.liquidityEth } valueAppendix="%" min={ 0 } max={ 100 } validation={ '^([1-9][0-9]?|100)$' } errorText="Enter a number from 0 to 100" />
+							<InputSlider className="inputs__item inputs__item--liquidity-percentage" label="Liquidity Percentage" id="liquidityPercentage" onChange={ updateSlider } isRequired={ true } value={ formState.liquidityPercentage } valueAppendix="%" min={ 0 } max={ 100 } validation={ '^([1-9][0-9]?|100)$' } errorText="Enter a number from 0 to 100" />
+							<InputSlider className="inputs__item inputs__item--liquidity-eth" label="Liquidity Duration" id="liquidityDuration" onChange={ updateSlider } isRequired={ true } value={ formState.liquidityDuration } valueAppendix="Days" min={ 0 } max={ 365 } validation={ '^([1-9][0-9]?|100)$' } errorText="Enter a number from 0 to 365" />
 						</div>
 						<div className="fieldset__manuals manuals">
 							<Text className="manuals__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a diam ultrices. Fllamcorper purus non, tristique mi. Donec at mi scelerisque, imperdiet est eget, porttitor libero. Pellentesque imperdiet euismod ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a diam ultrices, ullamcorper purus non, tristique mi. Donec at mi scelerisque, imperdiet est eget, porttitor libero. Pellentesque imperdiet euismod ex.</Text>
