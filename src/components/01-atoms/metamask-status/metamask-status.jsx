@@ -13,27 +13,34 @@ const MetamaskStatus = ({ className }) => {
 		const ethereum = window.ethereum;
 		const web3 = new Web3(ethereum);
 		
-
-
 		useEffect(() => {
-			connectWallet();
+			checkConnection();
 			ethereum.on('connect', () => connectWallet());
 			ethereum.on('disconnect', () =>  disconnectWallet());
 			ethereum.on('chainChanged', () => reloadClient());
 			ethereum.on('accountsChanged', () => connectWallet());
 		}, []);
  
+		const checkConnection = async () => {
+			const accounts = await web3.eth.getAccounts();
+			const account = accounts[0]
+			if (!account) dispatch(disconnect())
+			const address = accounts[0]
+			const balanceInWei = await web3.eth.getBalance(address);
+			const balanceInEth = await web3.utils.fromWei(balanceInWei, 'ether');
+			const chainId = await web3.eth.getChainId();
+			dispatch(connect({ address, balanceInEth, chainId }))
+		};
+
 		const connectWallet = async () => {
 			const accounts = await web3.eth.requestAccounts();
 			const account = accounts[0];
 			if (!account) dispatch(disconnect())
 			const address = accounts[0]
-			const balance = await web3.eth.getBalance(address);
+			const balanceInWei = await web3.eth.getBalance(address);
+			const balanceInEth = await web3.utils.fromWei(balanceInWei, 'ether');
 			const chainId = await web3.eth.getChainId();
-			console.log(chainId);
-			console.log(balance);
-			console.log(address, balance, balance);
-			dispatch(connect({ address, balance, chainId }))
+			dispatch(connect({ address, balanceInEth, chainId }))
 		};
 
 		const disconnectWallet = () => {
@@ -43,12 +50,9 @@ const MetamaskStatus = ({ className }) => {
 		const reloadClient = () => {
 			window.location.reload();
 		};
-
-
-		
 		
     return (
-		<Button className={`${ className ? className : ''} ${ metamask.isConnected ? 'metamask-status--connected' : '' } metamask-status button--with-status button--with-rainbow-border`} onClick={ connectWallet }>
+		<Button className={`${ className ? className : ''} ${ metamask.isConnected ? 'metamask-status--connected' : '' } metamask-status button--with-status button--with-rainbow-border`} onClick={ connectWallet } href="#">
             { metamask.isConnected ? 'Connected' : 'Not Connected' }
         </Button>
 	);
@@ -56,41 +60,3 @@ const MetamaskStatus = ({ className }) => {
 };
 
 export default MetamaskStatus;
-
-
-			// <Button className={`${ className ? className : ''} ${ metamask.isConnected ? 'metamask-status--connected' : '' } metamask-status button--with-status button--with-rainbow-border`} onClick={ connectWallet }>
-			//     { metamask.isConnected ? 'Connected' : 'Not Connected' }
-			// </Button>
-
-			// const connectWallet = async () => {
-			// 	if (!ethereum) return;
-			// 	const accounts = await ethereum.request({ method: 'eth_requestAccounts'});
-			// 	if (accounts[0]) {
-			// 		const address = accounts[0]
-			// 		const balanceHex = await ethereum.request({ method: 'eth_getBalance', params: [ address, 'latest' ]});
-			// 		const balance = parseInt(balanceHex, 16);
-			// 		dispatch(connect({ address, balance }))
-			// 	} else {
-			// 		dispatch(disconnect())
-			// 	};
-			// };
-	
-			// const checkConnected = async () => {
-			// 	if (!ethereum) return;
-			// 	const accounts = await ethereum.request({ method: 'eth_accounts'});
-			// 	if (accounts[0]) {
-			// 		const address = accounts[0]
-			// 		const balanceHex = await ethereum.request({ method: 'eth_getBalance', params: [ address, 'latest' ]});
-			// 		const balance = parseInt(balanceHex, 16);
-			// 		dispatch(connect({ address, balance }))
-			// 	} else {
-			// 		dispatch(disconnect());
-			// 	};
-			// };
-	
-			// useEffect(() => {
-			// 	if (!ethereum) return;
-			// 	checkConnected();
-			// 	window.ethereum.on('accountsChanged', checkConnected);
-			// 	window.ethereum.on('disconnect', )
-			// }, []);

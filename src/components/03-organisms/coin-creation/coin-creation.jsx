@@ -15,6 +15,7 @@ const CoinCreation = () => {
 	const dispatch = useDispatch();
 	const metamask = useSelector((state) => state.metamask);
 
+
 	const [ formState, setFormState ] = useState({
 		logo: null,
 		name: null,
@@ -71,16 +72,23 @@ const CoinCreation = () => {
 		inputsToValidate.forEach((input) => {
 			const element = input.closest('.input-element');
 			const id = input.getAttribute('id');
-			input.value < 0 && errors.push(id);
-			input.value < 0 ? element.classList.add('input-element--error') : element.classList.remove('input-element--error') ;
+			const value = input.value ? input.value : 0;
+			value < 0 && errors.push(id);
+			value < 0 ? element.classList.add('input-element--error') : element.classList.remove('input-element--error') ;
 		});
-		const totalTax = inputsToValidate.reduce((accumulator, input) => accumulator + parseInt(input.value), 0);
+		const totalTax = inputsToValidate.reduce((accumulator, input) =>  {
+			const value = input.value ? input.value : 0;
+			return accumulator + parseInt(value)
+		}, 0);
 		if (totalTax > 25) inputsToValidate.forEach((input) => {
 			const element = input.closest('.input-element');
 			const id = input.getAttribute('id');
 			element.classList.add('input-element--error');
+			console.log(element)
 			errors.push(id);
 		});
+		const errorInfo = document.querySelector('.form__fieldset--taxes .error-info');
+		errors.length > 0 ? errorInfo.classList.add('error-info--visible') : errorInfo.classList.add('error-info--visible');
 		return errors;
 	};
 
@@ -124,6 +132,15 @@ const CoinCreation = () => {
       				<Text className="header__text">Enter details of your token and easily deploy in minutes.</Text>
       			</div>
 
+				{ metamask.isConnected === false ? (
+					
+					<div className="coin-creation__not-connected-info not-connected-info">
+						<Heading className="not-connected-info__title" level="h3">Connect your wallet to get started</Heading>
+      					<Text className="not-connected-info__text">Our token creator needs the address of your wallet to be able to get how much ETH you have and in the end to sign and create the token you want. Please connect your wallet to start the process.</Text>
+					</div>
+
+				) : (
+
 				<form className="coin-creation__form form">
 
 					{/* NAME AND SYMBOL */}
@@ -157,7 +174,7 @@ const CoinCreation = () => {
 							<Heading className="heading__subtitle" level="h3">Create your <Rainbow>logo</Rainbow> and <Rainbow>name</Rainbow>for your coin</Heading>
 						</div>
 						<div className="fieldset__inputs inputs">
-							<InputSlider className="inputs__item inputs__item--max-supply" label="Total Supply" id="maxSupply" onChange={ updateSlider } isRequired={ true } value={ formState.maxSupply } min={ 0 } max={ metamask.balance } validation={ '^([1-9][0-9]?|100)$' } valueAppendix="ETH" errorText="Enter a number from 0 to 100" />
+							<InputSlider className="inputs__item inputs__item--max-supply" label="Total Supply" id="maxSupply" onChange={ updateSlider } isRequired={ true } value={ formState.maxSupply } min={ 0 } max={ metamask.balanceInEth  } step="0.000000000001" validation={ '^([1-9][0-9]?|100)$' } valueAppendix="ETH" errorText="Enter a number from 0 to 100" />
 							<InputSlider className="inputs__item inputs__item--liquidity-percentage" label="Liquidity percentage" id="liquidityPercentage" onChange={ updateSlider } isRequired={ true } value={ formState.liquidityPercentage } valueAppendix="%" min={ 0 } max={ 100 } validation={ '^([1-9][0-9]?|100)$' } errorText="Enter a number from 0 to 100" />
 							<InputSlider className="inputs__item inputs__item--liquidity-eth" label="Liquidity ETH" id="liquidityEth" onChange={ updateSlider } isRequired={ true } value={ formState.liquidityEth } valueAppendix="%" min={ 0 } max={ 100 } validation={ '^([1-9][0-9]?|100)$' } errorText="Enter a number from 0 to 100" />
 						</div>
@@ -172,7 +189,7 @@ const CoinCreation = () => {
 							<p className="index__number">3</p>
 							<span className="index__line"></span>
 						</div>
-						<div className="supply-and-liquidity__heading heading">
+						<div className="fieldset__heading heading">
 							<Heading className="heading__title" level="h2">Create sell tax for a better tokenomics</Heading>
 							<Heading className="heading__subtitle" level="h3">Create your <Rainbow>logo</Rainbow> and <Rainbow>name</Rainbow>for your coin</Heading>
 						</div>
@@ -192,6 +209,9 @@ const CoinCreation = () => {
 								<InputText className="taxes__input taxes__input--buy-3" id="taxes3" type="number" label="" field="buy" placeholder="%" value={ formState.taxes[1].buy } onChange={ updateTaxes } />
 								<InputText className="taxes__input taxes__input--sell-3" id="taxes3" type="number" label="" field="sell" placeholder="%" value={ formState.taxes[1].sell } onChange={ updateTaxes } />
 							</span>	
+						</div>
+						<div className="fieldset__error-info error-info">
+							<p className="error-info__text error-info__text--max-tax">The sum of all taxes cannot be greater than 25%</p>
 						</div>
 						<div className="fieldset__manuals manuals">
 							<Text className="manuals__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a diam ultrices. Fllamcorper purus non, tristique mi. Donec at mi scelerisque, imperdiet est eget, porttitor libero. Pellentesque imperdiet euismod ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a diam ultrices, ullamcorper purus non, tristique mi. Donec at mi scelerisque, imperdiet est eget, porttitor libero. Pellentesque imperdiet euismod ex.</Text>
@@ -241,6 +261,8 @@ const CoinCreation = () => {
 					</fieldset>
 
 				</form>
+
+				)}
 
 			</div>
 

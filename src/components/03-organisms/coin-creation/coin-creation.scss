@@ -1,4 +1,5 @@
 @import 'styles/variables.scss';
+@import 'styles/mixins.scss';
 
 .coin-creation {
 
@@ -12,17 +13,31 @@
 
 	}
 
+	&__not-connected-info, .not-connected-info {
+
+        @include rainbow-border(6px, $white);
+        @include rainbow-border--autoplay;
+        display: grid;
+        padding: 32px;
+
+		&__title {
+			margin-bottom: 16px;
+		}
+
+	}
+
 	&__form, .form {
 
 		&__fieldset, .fieldset {
 			display: grid;
 			grid-gap: 32px;
 			margin-bottom: 32px;
-			grid-template-rows: auto auto auto auto;
+			grid-template-rows: auto auto auto auto auto;
 			grid-template-columns: 80px auto;
 			grid-template-areas: 
 				"index heading"
 				"index inputs"
+				"index error-info"
 				"index manuals"
 				"index submit";
 
@@ -80,6 +95,19 @@
 				grid-area: inputs;
 				display: grid;
 				grid-gap: 32px;
+			}
+
+			 &__error-info, .error-info {
+				grid-area: error-info;
+				display: none;
+				border: 2px solid $red-50;
+				padding: 12px 24px;
+				border-radius: 32px;
+
+				&--visible {
+					display: block;
+				}
+
 			}
 
 			&__manuals {

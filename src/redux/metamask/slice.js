@@ -8,13 +8,13 @@ export const coinCreationSlice = createSlice({
         connect: (state, action) => {
             state.isConnected = true;
             state.address = action.payload.address;
-            state.balance = action.payload.balance;
+            state.balanceInEth = action.payload.balanceInEth;
             state.chainId = action.payload.chainId;
         },
         disconnect: (state) => {
             state.isConnected = false;
             state.address = '';
-            state.balance = 0;
+            state.balanceInEth = 0;
             state.chainId = '';
         },
     }
